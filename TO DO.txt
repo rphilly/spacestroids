@@ -1,0 +1,13 @@
+existing 2d game projects and general video game development 
+
+ 
+
+BACKGROUND RESEARCH:
+!! Mention game is based in java
+Discuss other articles  
+Talk further about project management – git: track, update code 
+Add sketches designed  
+
+SKETCHES:
+
+PRESENTATION: 
