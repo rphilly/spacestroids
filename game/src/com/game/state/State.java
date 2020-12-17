@@ -1,0 +1,31 @@
+package com.game.state;
+
+import com.game.util.Mouse;
+import com.game.view.Panel;
+
+import java.awt.Graphics2D;
+
+public abstract class State {
+
+    protected Panel panel;
+    private static State currentState = null;
+
+    public State(Panel panel) {
+        this.panel = panel;
+    }
+
+    public static State getState() {
+        return currentState;
+    }
+
+    public static void setState(State state) {
+        currentState = state;
+    }
+
+    public abstract void input(Mouse mouse);
+
+    public abstract void update();
+
+    public abstract void render(Graphics2D g);
+
+}
