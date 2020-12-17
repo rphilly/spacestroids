@@ -60,10 +60,10 @@ public class Menu extends State {
     @Override
     public void render(Graphics2D g) {
         uiManager.render(g);
-        Sprite.drawArray(g, font, "GAME TITLE HERE", new Vector2f(Panel.width / 2 - 230, 100), 64, 64, 32, 0);
-        Sprite.drawArray(g, font, "Play", new Vector2f(Panel.width / 2 - 41, 270), 32, 32, 16, 0);
-        Sprite.drawArray(g, font, "Hiscores", new Vector2f(Panel.width / 2 - 70, 335), 32, 32, 16, 0);
-        Sprite.drawArray(g, font, "Options", new Vector2f(Panel.width / 2 - 60, 400), 32, 32, 16, 0);
-        Sprite.drawArray(g, font, "Exit", new Vector2f(Panel.width / 2 - 41, 465), 32, 32, 16, 0);
+        Sprite.drawArray(g, font, "GAME TITLE HERE", new Vector2f((float) Panel.width / 2 - 230, 100), 64, 64, 32, 0);
+        Sprite.drawArray(g, font, "Play", new Vector2f((float) Panel.width / 2 - 41, 270), 32, 32, 16, 0);
+        Sprite.drawArray(g, font, "Hiscores", new Vector2f((float) Panel.width / 2 - 70, 335), 32, 32, 16, 0);
+        Sprite.drawArray(g, font, "Options", new Vector2f((float) Panel.width / 2 - 60, 400), 32, 32, 16, 0);
+        Sprite.drawArray(g, font, "Exit", new Vector2f((float) Panel.width / 2 - 41, 465), 32, 32, 16, 0);
     }
 }
