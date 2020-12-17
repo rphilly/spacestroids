@@ -1,8 +1,0 @@
-hiscores with json formatting
-collision detection
-menu with options - pause game - controls - resolution
-sprite sheet loader - 
-offscreen object spawning
-power ups
-
-

@@ -1,6 +1,6 @@
 package com.game;
 
-import com.game.core.Frame;
+import com.game.view.Frame;
 
 public class Launcher {
 
