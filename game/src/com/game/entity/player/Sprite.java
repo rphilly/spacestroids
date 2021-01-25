@@ -13,7 +13,6 @@ public class Sprite {
 
     private BufferedImage player = null;
 
-
     public Sprite(String file) {
         System.out.println("Loading: " + file + "...");
         player = loadSprite(file);

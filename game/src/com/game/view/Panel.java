@@ -1,12 +1,11 @@
 package com.game.view;
 
-import com.game.entity.player.Player;
 import com.game.state.Game;
 import com.game.state.Menu;
 import com.game.state.State;
 import com.game.util.Mouse;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -23,10 +22,7 @@ public class Panel extends JPanel implements Runnable {
 
     private Mouse mouse;
 
-    private State gameState, menuState;
-
-    Player player;
-    //
+    //Player player;
 
     public Panel(int width, int height) {
         this.width = width;
@@ -66,8 +62,8 @@ public class Panel extends JPanel implements Runnable {
 
         mouse = new Mouse(this);
 
-        gameState = new Game(this);
-        menuState = new Menu(this);
+        State gameState = new Game(this);
+        State menuState = new Menu(this);
 
         State.setState(menuState);
     }

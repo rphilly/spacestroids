@@ -3,6 +3,7 @@ package com.game.util;
 import com.game.view.Panel;
 import com.game.view.ui.UiManager;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -12,6 +13,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
     protected int x;
     protected int y;
     private static int mouseB;
+    public Point pointer;
 
     private UiManager uiManager;
 
@@ -21,6 +23,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
 
     public Mouse(Panel panel) {
         panel.addMouseListener(this);
+        panel.addMouseMotionListener(this);
     }
 
     @Override
@@ -32,6 +35,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
     public void mouseMoved(MouseEvent e) {
         x = e.getX();
         y = e.getY();
+        pointer = e.getPoint();
 
         //System.out.println(x + ", " + y);
     }
@@ -42,6 +46,10 @@ public class Mouse implements MouseListener, MouseMotionListener {
 
     public int getY() {
         return y;
+    }
+
+    public Point getPointer() {
+        return pointer;
     }
 
     public int getButton() {

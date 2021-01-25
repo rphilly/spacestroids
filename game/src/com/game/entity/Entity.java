@@ -3,21 +3,24 @@ package com.game.entity;
 import com.game.entity.player.Sprite;
 import com.game.util.Vector2f;
 
-import java.awt.*;
-
 public abstract class Entity {
 
     protected Sprite sprite;
-    protected Vector2f pos;
+    protected Vector2f position;
     protected int size;
 
-    public Entity(Sprite sprite, Vector2f pos, int size) {
-        this.sprite = sprite;
-        this.pos = pos;
+    public Entity(Vector2f position) {
+        this.position = position;
+    }
+
+    public Entity(Vector2f position, int size) {
+        this.position = position;
         this.size = size;
     }
 
-    public abstract void update();
-
-    public abstract void render(Graphics g);
+    public Entity(Sprite sprite, Vector2f position, int size) {
+        this.sprite = sprite;
+        this.position = position;
+        this.size = size;
+    }
 }

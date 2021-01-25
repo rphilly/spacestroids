@@ -3,14 +3,12 @@ package com.game.state;
 import com.game.util.Font;
 import com.game.util.Mouse;
 import com.game.util.Sprite;
-import com.game.view.ui.ClickListener;
 import com.game.view.ui.UiButton;
 import com.game.view.ui.UiManager;
 import com.game.util.Vector2f;
 import com.game.view.Panel;
 
 import java.awt.*;
-
 
 public class Menu extends State {
 
