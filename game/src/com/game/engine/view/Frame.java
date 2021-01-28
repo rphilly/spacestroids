@@ -11,9 +11,6 @@ public class Frame extends JFrame {
     public Frame() {
         setTitle(NAME);
         setContentPane(new Panel(WIDTH, HEIGHT));
-        //setContentPane(new Player());
-        //getContentPane().add(new Player());
-        //setSize(800, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setResizable(false);

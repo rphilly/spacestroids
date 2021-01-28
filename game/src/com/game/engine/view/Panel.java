@@ -21,8 +21,6 @@ public class Panel extends JPanel implements Runnable {
 
     private Mouse mouse;
 
-    //Player player;
-
     public Panel(int width, int height) {
         this.width = width;
         this.height = height;
