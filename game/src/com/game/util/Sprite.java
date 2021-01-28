@@ -1,11 +1,10 @@
 package com.game.util;
 
-import com.game.util.Vector2f;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Sprite {
 
@@ -19,6 +18,11 @@ public class Sprite {
 
     public static Font currentFont;
 
+    //?
+    /*public Sprite(String file) {
+        System.out.println("Loading: " + file + "...");
+    }*/
+
     public Sprite(String file) {
         w = TILE_SIZE;
         h = TILE_SIZE;
@@ -29,8 +33,6 @@ public class Sprite {
         wSprite = SPRITE_SHEET.getWidth() / w; //total no. of sprites on screen
         hSprite = SPRITE_SHEET.getHeight() / h;
         loadSpriteArray();
-
-        System.out.println("loaded!");
     }
 
     public Sprite(String file, int w, int h) {
@@ -71,9 +73,9 @@ public class Sprite {
     private BufferedImage loadSprite(String file) {
         BufferedImage sprite = null;
         try {
-            sprite = ImageIO.read(getClass().getClassLoader().getResourceAsStream(file));
+            sprite = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(file)));
         } catch(Exception e) {
-            System.out.println("Error");
+            System.out.println("SPRITE ERROR: " + file);
         }
 
         return sprite;

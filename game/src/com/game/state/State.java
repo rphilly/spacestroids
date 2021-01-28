@@ -1,7 +1,7 @@
 package com.game.state;
 
 import com.game.util.Mouse;
-import com.game.view.Panel;
+import com.game.engine.view.Panel;
 
 import java.awt.Graphics2D;
 

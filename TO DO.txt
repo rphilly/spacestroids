@@ -1,8 +1,23 @@
-﻿BACKGROUND RESEARCH:
+﻿docs:
+	-gantt sheet ?
 
-Discuss other articles  
-Talk further about project management – git: track, update code 
-Add sketches designed  
+functions:	
+	-sprite sheet loader
+	-enemy spawn system
+	-player shooting
+	-collision detection
+
+
+features:
+	-wave/round system; more enemies
+	-hiscores with json formatting
+	-menu system
+		-key nav	
+		-options: controls, resolution,  
+	-pause game
+	-offscreen object spawning
+	-power ups; upgrades on kills?
+ 	-name at play	
 
 
 
