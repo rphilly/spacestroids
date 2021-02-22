@@ -73,7 +73,7 @@ public class Player extends Entity {
         pointer = e.getPointer();
         double dx = e.getX() - position.x;
         double dy = e.getY() - position.y;
-        imageAngleRad = Math.atan2(dy, dx);
+        imageAngleRad = Math.atan2(dy, dx) + 1.49; //90
         //repaint();
     }
 }
