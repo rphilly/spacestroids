@@ -5,6 +5,7 @@ import java.awt.*;
 public class UiButton extends UiObject {
 
     private final ClickListener click;
+    private Graphics graphics;
 
     public UiButton(float x, float y, int width, int height, ClickListener click) {
         super(x, y, width, height);
@@ -13,7 +14,10 @@ public class UiButton extends UiObject {
 
     @Override
     public void tick() {
-
+        if (hovering) {
+            render(graphics);
+            //System.out.println("hey boys x");
+        }
     }
 
     @Override
@@ -24,6 +28,7 @@ public class UiButton extends UiObject {
             g.setColor(Color.BLACK);
         }
         g.fillRect((int) x, (int) y, width, height);
+        graphics = g;
     }
 
     @Override

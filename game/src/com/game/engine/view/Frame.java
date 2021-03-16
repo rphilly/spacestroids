@@ -4,7 +4,8 @@ import javax.swing.*;
 
 public class Frame extends JFrame {
 
-    protected final String NAME = "GAME!";
+    private final String VERSION = "RELEASE 0.4";
+    protected final String NAME = "" + VERSION;
     private final int WIDTH = 1280;
     private final int HEIGHT = 720;
 

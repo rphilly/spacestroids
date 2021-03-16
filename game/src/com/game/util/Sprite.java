@@ -10,7 +10,7 @@ public class Sprite {
 
     private final BufferedImage SPRITE_SHEET;
     private BufferedImage[][] spriteArray;
-    private final int TILE_SIZE = 32;
+    private final int TILE_SIZE = 64;
     public int w;
     public int h;
     private int wSprite;
@@ -82,7 +82,7 @@ public class Sprite {
     }
 
     private void loadSpriteArray() {
-        spriteArray = new BufferedImage[wSprite][hSprite];
+        spriteArray = new BufferedImage[wSprite][hSprite]; //No. of sprites in sheet
 
         for (int x = 0; x < wSprite; x++) {
             for (int y = 0; y < hSprite; y++) {
@@ -105,6 +105,10 @@ public class Sprite {
 
     public BufferedImage[][] getSpriteArray2(int i) { //return whole sprite array
         return spriteArray;
+    }
+
+    public static void drawArray(Graphics2D g, String word, Vector2f pos, int size, int xOffset) {
+        drawArray(g, currentFont, word, pos, size, size, xOffset, 0);
     }
 
     public static void drawArray(Graphics2D g, ArrayList<BufferedImage> img, Vector2f pos, int width, int height, int xOffset, int yOffset) {
