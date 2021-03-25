@@ -1,6 +1,5 @@
 package com.game.state;
 
-import com.game.util.Font;
 import com.game.util.Mouse;
 import com.game.util.Sprite;
 import com.game.ui.UiButton;
@@ -13,8 +12,6 @@ import java.awt.*;
 public class Menu extends State {
 
     private final UiManager uiManager;
-
-    Font font = new Font("graphics/font/fontsheet.png", 16, 16);
 
     public Menu(Panel panel) {
         super(panel);
@@ -30,12 +27,12 @@ public class Menu extends State {
 
         //Hi-scores
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 326, 140, 45, () -> {
-            //setState(new DeathState(panel));
+
         }));
 
         //Options
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 392, 140, 45, () -> {
-            //System.exit(0);
+            setState(new Options(panel));
         }));
 
         //Exit
@@ -55,13 +52,32 @@ public class Menu extends State {
         //System.out.println(game.getMouseHandler().getX() + "   " + game.getMouseHandler().getY());
     }
 
+    int x, y;
+    //String s = "loooooooooooooooooooooooooool";
+
     @Override
     public void render(Graphics2D g) {
         uiManager.render(g);
-        Sprite.drawArray(g, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 190, 100), 64, 64, 32, 0); //230
-        Sprite.drawArray(g, font, "Play", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 16, 0);
-        Sprite.drawArray(g, font, "Hiscores", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 16, 0);
-        Sprite.drawArray(g, font, "Options", new Vector2f((float) panel.getWidth() / 2 - 60, 400), 32, 32, 16, 0);
-        Sprite.drawArray(g, font, "Exit", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 16, 0);
+
+        java.awt.Font f = new Font("Arial", java.awt.Font.BOLD, 24);
+        g.setFont(f);
+        g.setColor(Color.WHITE);
+
+        FontMetrics fm = g.getFontMetrics();
+
+        //x = panel.getWidth() / 2 - fm.stringWidth(s) / 2;
+        y = panel.getHeight() / 2 - fm.getHeight();
+        //System.out.println("Width: " + fm.stringWidth(s) + ", Height: " + fm.getHeight());
+
+        //g.drawString(s, x, y);
+
+        Sprite.drawArray(g, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 190, 100), 64, 64, 30, 0); //230
+        Sprite.drawArray(g, font, "Play", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
+        Sprite.drawArray(g, font, "Hiscores", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 14, 0);
+        Sprite.drawArray(g, font, "Options", new Vector2f((float) panel.getWidth() / 2 - 60, 400), 32, 32, 14, 0);
+        Sprite.drawArray(g, font, "Exit", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
+
+        g.setColor(Color.GREEN);
+        g.drawLine(panel.getWidth() / 2, panel.getHeight(), panel.getWidth() / 2, 0);
     }
 }

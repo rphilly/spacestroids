@@ -1,5 +1,6 @@
 package com.game.state;
 
+import com.game.util.Font;
 import com.game.util.Mouse;
 import com.game.engine.view.Panel;
 
@@ -9,6 +10,8 @@ public abstract class State {
 
     protected Panel panel;
     private static State currentState = null;
+
+    Font font = new Font("graphics/font/font_sheet.png", 16, 16);
 
     public State(Panel panel) {
         this.panel = panel;

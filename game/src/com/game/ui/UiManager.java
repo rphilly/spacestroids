@@ -39,5 +39,4 @@ public class UiManager {
     public void removeObject(UiObject o) {
         objects.remove(o);
     }
-
 }

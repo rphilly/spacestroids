@@ -18,11 +18,6 @@ public class Sprite {
 
     public static Font currentFont;
 
-    //?
-    /*public Sprite(String file) {
-        System.out.println("Loading: " + file + "...");
-    }*/
-
     public Sprite(String file) {
         w = TILE_SIZE;
         h = TILE_SIZE;

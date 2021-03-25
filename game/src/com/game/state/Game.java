@@ -47,7 +47,8 @@ public class Game extends State {
         }
 
         String score = "Score 5";
-        Sprite.drawArray(g, score, new Vector2f((float) 1280 / 2 - 75, 40), 40, 20);
+        //Sprite.drawArray(g, score, new Vector2f((float) 1280 / 2 - 75, 40), 40, 20);
+        Sprite.drawArray(g, font, "Score", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 16, 0);
     }
 
     public void initialiseEnemy(int amount) {

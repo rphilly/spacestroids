@@ -9,7 +9,6 @@ import javax.imageio.ImageIO;
 import javax.swing.Timer;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -64,9 +63,6 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics2D g2d) {
-        //g2d.drawImage(player, (int) x, (int) y, player.getWidth() / 2, player.getHeight() / 2,null);
-        //g2d.dispose();
-
         //Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(
                 RenderingHints.KEY_RENDERING,
@@ -78,7 +74,6 @@ public class Player extends Entity {
         g2d.translate(cx + position.x, cy + position.y);
         g2d.rotate(imageAngleRad);
         g2d.translate(-cx, -cy);
-        //g2d.drawImage(sprite.getSpriteSheet(), 0, 0, null);
         g2d.drawImage(player, 0, 0, null);
         g2d.setTransform(oldAT);
     }
