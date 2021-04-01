@@ -22,7 +22,7 @@ public class Sprite {
         w = TILE_SIZE;
         h = TILE_SIZE;
 
-        System.out.println("Loading..." + file + "...");
+        System.out.println("Loading: " + file + "...");
         SPRITE_SHEET = loadSprite(file);
 
         wSprite = SPRITE_SHEET.getWidth() / w; //total no. of sprites on screen
@@ -34,7 +34,7 @@ public class Sprite {
         this.w = w;
         this.h = h;
 
-        System.out.println("Loading..." + file + "...");
+        System.out.println("Loading: " + file + "...");
         SPRITE_SHEET = loadSprite(file);
 
         wSprite = SPRITE_SHEET.getWidth() / w; //total no. of sprites on screen
@@ -65,7 +65,7 @@ public class Sprite {
         return h;
     }
 
-    private BufferedImage loadSprite(String file) {
+    public BufferedImage loadSprite(String file) {
         BufferedImage sprite = null;
         try {
             sprite = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(file)));

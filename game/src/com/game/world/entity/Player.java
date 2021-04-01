@@ -1,7 +1,7 @@
 package com.game.world.entity;
 
+import com.game.state.Game;
 import com.game.util.Mouse;
-import com.game.util.Sprite;
 import com.game.util.Vector2f;
 
 import javax.imageio.ImageIO;
@@ -19,8 +19,11 @@ public class Player extends Entity {
     public Point pointer;
     public double imageAngleRad = 0;
 
-    public Player(Sprite sprite, Vector2f position) {
-        super(sprite, position);
+    protected boolean attack, keyLock;
+
+    public Player(Vector2f position, Game game) {
+        super(position);
+        this.game = game;
 
         BufferedImage i = null;
         try {
@@ -48,17 +51,29 @@ public class Player extends Entity {
         timer.start();
     }
 
+    @Override
     public void input(Mouse e) {
         pointer = e.getPointer();
         double dx = e.getX() - position.x;
         double dy = e.getY() - position.y;
         imageAngleRad = Math.atan2(dy, dx) + 1.49; //90
         //repaint();
+
+        if (e.getButton() == -1) {
+            keyLock = true;
+        }
+
+        attack = e.getButton() == 1;
     }
 
     @Override
     public void update() {
-
+        if (attack) {
+            if (keyLock) {
+                game.addObj(new Bullet(new Vector2f(position.x, position.y)));
+                keyLock = false;
+            }
+        }
     }
 
     @Override

@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Frame extends JFrame {
 
-    private final String VERSION = "SPACESTROIDS - RELEASE 0.44";
+    private final String VERSION = "Spacestroids 0.45";
     protected final String NAME = "" + VERSION;
     private final int WIDTH = 1280;
     private final int HEIGHT = 720;

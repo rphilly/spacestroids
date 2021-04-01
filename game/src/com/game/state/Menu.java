@@ -53,23 +53,22 @@ public class Menu extends State {
     }
 
     int x, y;
-    //String s = "loooooooooooooooooooooooooool";
+    String s = "SPACESTROIDS";
 
     @Override
     public void render(Graphics2D g) {
         uiManager.render(g);
 
-        java.awt.Font f = new Font("Arial", java.awt.Font.BOLD, 24);
+        java.awt.Font f = new Font("Arial", java.awt.Font.BOLD, 64);
         g.setFont(f);
         g.setColor(Color.WHITE);
 
         FontMetrics fm = g.getFontMetrics();
 
-        //x = panel.getWidth() / 2 - fm.stringWidth(s) / 2;
+        x = panel.getWidth() / 2 - fm.stringWidth(s) / 2;
         y = panel.getHeight() / 2 - fm.getHeight();
-        //System.out.println("Width: " + fm.stringWidth(s) + ", Height: " + fm.getHeight());
 
-        //g.drawString(s, x, y);
+        //g.drawString(s, x, y); //centered
 
         Sprite.drawArray(g, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 190, 100), 64, 64, 30, 0); //230
         Sprite.drawArray(g, font, "Play", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);

@@ -1,5 +1,6 @@
 package com.game.world.entity;
 
+import com.game.state.Game;
 import com.game.util.Mouse;
 import com.game.util.Sprite;
 import com.game.util.Vector2f;
@@ -7,6 +8,8 @@ import com.game.util.Vector2f;
 import java.awt.*;
 
 public abstract class Entity {
+
+    protected Game game;
 
     protected Sprite sprite;
     protected Vector2f position;

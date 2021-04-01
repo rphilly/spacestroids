@@ -1,7 +1,7 @@
 package com.game.state;
 
-import com.game.util.Font;
 import com.game.world.entity.Asteroid;
+import com.game.world.entity.Bullet;
 import com.game.world.entity.Entity;
 import com.game.world.entity.Player;
 import com.game.util.Mouse;
@@ -11,19 +11,23 @@ import com.game.engine.view.Panel;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class Game extends State {
 
     Player player;
+
+    LinkedList<Entity> objects = new LinkedList<>();
     ArrayList<Asteroid> enemies = new ArrayList<>();
+    ArrayList<Bullet> bullets = new ArrayList<>();
 
     public Game(Panel panel) {
         super(panel);
 
-        player = new Player(new Sprite("entity/player/player4.png"), new Vector2f(300, 300));
+        player = new Player(new Vector2f(300, 300), this);
 
-        initialiseEnemy(3);
+        initialiseEnemy(1);
     }
 
     @Override
@@ -33,7 +37,13 @@ public class Game extends State {
 
     @Override
     public void update() {
+        player.update();
+
         for (Entity temp : enemies) {
+            temp.update();
+        }
+
+        for (Entity temp : bullets) {
             temp.update();
         }
     }
@@ -46,9 +56,22 @@ public class Game extends State {
             temp.render(g);
         }
 
-        String score = "Score 5";
+
+        for (Entity temp : bullets) {
+            temp.render(g);
+        }
+
+        //String score = "Score 5";
         //Sprite.drawArray(g, score, new Vector2f((float) 1280 / 2 - 75, 40), 40, 20);
-        Sprite.drawArray(g, font, "Score", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 16, 0);
+        //Sprite.drawArray(g, font, "Score", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 16, 0);
+    }
+
+    public void addObj(Entity temp) {
+        if (temp.getClass() == Bullet.class){
+            bullets.add((Bullet) temp);
+        } else {
+            objects.add(temp);
+        }
     }
 
     public void initialiseEnemy(int amount) {
@@ -62,7 +85,6 @@ public class Game extends State {
         } else {
             y = random.nextInt(panel.getHeight() - 100);
         }
-
 
         int randomSize = 32 + random.nextInt(64);
 

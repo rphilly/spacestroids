@@ -38,8 +38,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (uiManager != null)
-            uiManager.onMouseRelease(e);
+
     }
 
     @Override
