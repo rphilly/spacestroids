@@ -1,5 +1,6 @@
 package com.game.state;
 
+import com.game.engine.Launcher;
 import com.game.util.Font;
 import com.game.util.Mouse;
 import com.game.engine.view.Panel;
@@ -9,12 +10,17 @@ import java.awt.Graphics2D;
 public abstract class State {
 
     protected Panel panel;
+    protected Launcher launcher;
     private static State currentState = null;
 
     Font font = new Font("graphics/font/font_sheet.png", 16, 16);
 
     public State(Panel panel) {
         this.panel = panel;
+    }
+
+    public State(Launcher launcher) {
+        this.launcher = launcher;
     }
 
     public static State getState() {

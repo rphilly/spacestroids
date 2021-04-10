@@ -10,31 +10,18 @@ import java.awt.*;
 public abstract class Entity {
 
     protected Game game;
-
     protected Sprite sprite;
-    protected Vector2f position;
-    protected int size;
-    protected Vector2f velocity = new Vector2f(0, 0);
-    //all entities need a velocity?
 
-    public Entity(Vector2f position) {
-        this.position = position;
-    }
+    protected Vector2f position, velocity;
+    protected double size;
 
-    public Entity(Vector2f position, int size) {
+    public Entity(Vector2f position, Vector2f velocity, double radius, Game game) {
         this.position = position;
-        this.size = size;
-    }
+        this.velocity = velocity;
+        size = radius;
+        this.game = game;
 
-    public Entity(Sprite sprite, Vector2f position) {
-        this.sprite = sprite;
-        this.position = position;
-    }
-
-    public Entity(Sprite sprite, Vector2f position, int size) {
-        this.sprite = sprite;
-        this.position = position;
-        this.size = size;
+        game.entityList.add(this);
     }
 
     public abstract void input(Mouse mouse);

@@ -1,5 +1,6 @@
 package com.game.world.entity;
 
+import com.game.engine.view.Panel;
 import com.game.state.Game;
 import com.game.util.Mouse;
 import com.game.util.Vector2f;
@@ -15,15 +16,18 @@ import java.io.IOException;
 
 public class Player extends Entity {
 
-    public final BufferedImage player;
-    public Point pointer;
-    public double imageAngleRad = 0;
+    private final BufferedImage player;
+    private Point pointer;
+    private double imageAngleRad = 0;
 
-    protected boolean attack, keyLock;
+    private boolean attack, keyLock;
 
-    public Player(Vector2f position, Game game) {
-        super(position);
-        this.game = game;
+    Panel panel;
+
+    public Player(Game game) {
+        super(new Vector2f(0, 0), new Vector2f(0, 0), 0, game);
+        position.x = 50;
+        position.y = 50;
 
         BufferedImage i = null;
         try {
@@ -33,7 +37,8 @@ public class Player extends Entity {
         }
         player = i;
 
-        Timer timer = new Timer(40, e -> {
+        //Continuously evaluate current mouse & image position
+        Timer timer = new Timer(25, e -> {
             if (pointer != null) {
 
                 int centerX = (int) position.x + (player.getWidth() / 2);
@@ -70,7 +75,7 @@ public class Player extends Entity {
     public void update() {
         if (attack) {
             if (keyLock) {
-                game.addObj(new Bullet(new Vector2f(position.x, position.y)));
+                game.addObj(new Bullet(this, imageAngleRad, game));
                 keyLock = false;
             }
         }
@@ -78,11 +83,9 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics2D g2d) {
-        //Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(
                 RenderingHints.KEY_RENDERING,
                 RenderingHints.VALUE_RENDER_QUALITY);
-
         int cx = player.getWidth() / 2;
         int cy = player.getHeight() / 2;
         AffineTransform oldAT = g2d.getTransform();

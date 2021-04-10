@@ -21,6 +21,9 @@ public class Panel extends JPanel implements Runnable {
 
     private Mouse mouse;
 
+    public boolean showFPS = true;
+    String fpsString = "";
+
     public Panel(int width, int height) {
         this.width = width;
         this.height = height;
@@ -67,12 +70,39 @@ public class Panel extends JPanel implements Runnable {
     public void run() {
         initialise();
 
+        int framesPerSecond = 60;
+        double timePerTick = 1e9 / framesPerSecond;
+        double delta = 0;
+        long currentFrameTime;
+        long lastFrameTime = System.nanoTime();
+        long timer = 0;
+        int ticks = 0;
+
         while (isRunning) { //Game loop
-            //System.out.println("running");
-            render();
-            draw();
-            update();
-            input(mouse);
+            currentFrameTime = System.nanoTime();
+            delta += (currentFrameTime - lastFrameTime) / timePerTick;
+            timer += currentFrameTime - lastFrameTime; //No. of nano seconds passed
+            lastFrameTime = currentFrameTime;
+
+            if (delta >= 1) {
+                input(mouse);
+                update();
+                render();
+                draw();
+                ticks++;
+                delta--;
+            }
+
+            if (timer >= 1e9) {
+                double fps = ticks;
+
+                if (showFPS) {
+                    fpsString = String.format("FPS: %3.1f", fps);
+                }
+
+                ticks = 0;
+                timer = 0;
+            }
         }
 
         stop();
@@ -95,6 +125,12 @@ public class Panel extends JPanel implements Runnable {
         if (g != null) {
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, width, height);
+
+            //Setup FPS
+            Font f = new Font("Times New Roman", Font.BOLD, 14);
+            g.setFont(f);
+            g.setColor(Color.GREEN);
+            g.drawString(fpsString, 40, 40);
         }
 
         if (State.getState() != null) {

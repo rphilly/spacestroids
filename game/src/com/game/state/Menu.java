@@ -6,8 +6,10 @@ import com.game.ui.UiButton;
 import com.game.ui.UiManager;
 import com.game.util.Vector2f;
 import com.game.engine.view.Panel;
+import com.game.world.entity.Asteroid;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Menu extends State {
 
@@ -27,7 +29,7 @@ public class Menu extends State {
 
         //Hi-scores
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 326, 140, 45, () -> {
-
+            //setState(new DeathState(panel));
         }));
 
         //Options
@@ -49,6 +51,7 @@ public class Menu extends State {
     @Override
     public void update() {
         uiManager.tick();
+
         //System.out.println(game.getMouseHandler().getX() + "   " + game.getMouseHandler().getY());
     }
 

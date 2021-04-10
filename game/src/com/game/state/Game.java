@@ -5,46 +5,55 @@ import com.game.world.entity.Bullet;
 import com.game.world.entity.Entity;
 import com.game.world.entity.Player;
 import com.game.util.Mouse;
-import com.game.util.Sprite;
 import com.game.util.Vector2f;
 import com.game.engine.view.Panel;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Random;
 
 public class Game extends State {
 
     Player player;
 
-    LinkedList<Entity> objects = new LinkedList<>();
-    ArrayList<Asteroid> enemies = new ArrayList<>();
-    ArrayList<Bullet> bullets = new ArrayList<>();
+    public ArrayList<Entity> entityList;
+    ArrayList<Asteroid> asteroidList;
+    ArrayList<Bullet> bulletList;
 
     public Game(Panel panel) {
         super(panel);
+        setupEntities();
 
-        player = new Player(new Vector2f(300, 300), this);
+        player = new Player(this);
 
         initialiseEnemy(1);
+    }
+
+    void setupEntities() {
+        entityList = new ArrayList<>();
+        asteroidList = new ArrayList<>();
+        bulletList = new ArrayList<>();
     }
 
     @Override
     public void input(Mouse mouse) {
         player.input(mouse);
+
+        for (Entity temp : bulletList) {
+            temp.input(mouse);
+        }
     }
 
     @Override
     public void update() {
         player.update();
 
-        for (Entity temp : enemies) {
-            temp.update();
+        for (Entity asteroid : asteroidList) {
+            asteroid.update();
         }
 
-        for (Entity temp : bullets) {
-            temp.update();
+        for (Entity bullet : bulletList) {
+            bullet.update();
         }
     }
 
@@ -52,25 +61,20 @@ public class Game extends State {
     public void render(Graphics2D g) {
         player.render(g);
 
-        for (Entity temp : enemies) {
-            temp.render(g);
+        for (Entity asteroid : asteroidList) {
+            asteroid.render(g);
         }
 
-
-        for (Entity temp : bullets) {
-            temp.render(g);
+        for (Entity bullet : bulletList) {
+            bullet.render(g);
         }
-
-        //String score = "Score 5";
-        //Sprite.drawArray(g, score, new Vector2f((float) 1280 / 2 - 75, 40), 40, 20);
-        //Sprite.drawArray(g, font, "Score", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 16, 0);
     }
 
     public void addObj(Entity temp) {
         if (temp.getClass() == Bullet.class){
-            bullets.add((Bullet) temp);
+            bulletList.add((Bullet) temp);
         } else {
-            objects.add(temp);
+            entityList.add(temp);
         }
     }
 
@@ -89,7 +93,7 @@ public class Game extends State {
         int randomSize = 32 + random.nextInt(64);
 
         for (int i = 0; i <= amount; i++) {
-            enemies.add(new Asteroid(new Vector2f(x, y)));
+            asteroidList.add(new Asteroid(new Vector2f(x, y), this));
         }
     }
 }
