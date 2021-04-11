@@ -128,8 +128,7 @@ public class Panel extends JPanel implements Runnable {
 
             //Setup FPS
             if (showFPS) {
-                Font f = new Font("Times New Roman", Font.BOLD, 14);
-                g.setFont(f);
+                g.setFont(new Font("Times New Roman", Font.BOLD, 14));
                 g.setColor(Color.GREEN);
                 g.drawString(fpsString, 40, 40);
             }

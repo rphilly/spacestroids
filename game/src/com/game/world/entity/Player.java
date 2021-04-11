@@ -1,6 +1,5 @@
 package com.game.world.entity;
 
-import com.game.engine.view.Panel;
 import com.game.state.Game;
 import com.game.util.Mouse;
 import com.game.util.Vector2f;
@@ -20,8 +19,8 @@ public class Player extends Entity {
     private Point pointer;
     private double imageAngleRad = 0;
 
-    int shotDelay = 15;
-    int shotCooldown = 0;
+    int triggerDelay = 15;
+    int triggerCooldown = 0;
 
     public Player(Vector2f position, Game game) {
         super(position, new Vector2f(0, 0), 0, game);
@@ -54,10 +53,10 @@ public class Player extends Entity {
     }
 
     public void shoot() {
-        if (shotCooldown == 0) {
+        if (triggerCooldown == 0) {
             new Bullet(this, imageAngleRad, game);
             game.attack = false;
-            shotCooldown = shotDelay;
+            triggerCooldown = triggerDelay;
         }
     }
 
@@ -72,7 +71,7 @@ public class Player extends Entity {
 
     @Override
     public void update() {
-        if (shotCooldown > 0) shotCooldown--;
+        if (triggerCooldown > 0) triggerCooldown--;
     }
 
     @Override
