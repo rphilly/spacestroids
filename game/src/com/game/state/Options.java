@@ -27,7 +27,7 @@ public class Options extends State {
 
         //Scale
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 326, 140, 45, () -> {
-            panel.showFPS = false;
+            panel.showFPS = true;
         }));
 
         //Options

@@ -16,7 +16,6 @@ public class UiButton extends UiObject {
     public void tick() {
         if (hovering) {
             render(graphics);
-            //System.out.println("hey boys x");
         }
     }
 

@@ -21,7 +21,7 @@ public class Panel extends JPanel implements Runnable {
 
     private Mouse mouse;
 
-    public boolean showFPS = true;
+    public boolean showFPS = false;
     String fpsString = "";
 
     public Panel(int width, int height) {
@@ -127,10 +127,12 @@ public class Panel extends JPanel implements Runnable {
             g.fillRect(0, 0, width, height);
 
             //Setup FPS
-            Font f = new Font("Times New Roman", Font.BOLD, 14);
-            g.setFont(f);
-            g.setColor(Color.GREEN);
-            g.drawString(fpsString, 40, 40);
+            if (showFPS) {
+                Font f = new Font("Times New Roman", Font.BOLD, 14);
+                g.setFont(f);
+                g.setColor(Color.GREEN);
+                g.drawString(fpsString, 40, 40);
+            }
         }
 
         if (State.getState() != null) {

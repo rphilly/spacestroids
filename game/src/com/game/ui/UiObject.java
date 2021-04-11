@@ -27,7 +27,7 @@ public abstract class UiObject {
     public void onMouseMove(MouseEvent e) {
         hovering = bounds.contains(e.getX(), e.getY());
         if (hovering) {
-            //System.out.println("asdasdasdasda");
+            System.out.println("mouse on screen");
         }
     }
 
