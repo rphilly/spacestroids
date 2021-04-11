@@ -9,11 +9,10 @@ import java.awt.*;
 
 public abstract class Entity {
 
-    protected Game game;
-    protected Sprite sprite;
-
     protected Vector2f position, velocity;
     protected double size;
+    protected Game game;
+    protected Sprite sprite;
 
     public Entity(Vector2f position, Vector2f velocity, double radius, Game game) {
         this.position = position;

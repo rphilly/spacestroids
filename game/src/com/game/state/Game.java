@@ -38,6 +38,25 @@ public class Game extends State {
         bulletList = new ArrayList<>();
     }
 
+    public void initialiseEnemy(int amount) {
+        Random random = new Random();
+
+        int x = 0;
+        int y = 0;
+
+        if (random.nextInt() > 0.5) {
+            x = random.nextInt(panel.getWidth() - 100);
+        } else {
+            y = random.nextInt(panel.getHeight() - 100);
+        }
+
+        int randomSize = 32 + random.nextInt(64);
+
+        for (int i = 0; i <= amount; i++) {
+            asteroidList.add(new Asteroid(new Vector2f(x, y), this));
+        }
+    }
+
     @Override
     public void input(Mouse mouse) {
         player.input(mouse);
@@ -71,25 +90,6 @@ public class Game extends State {
 
         for (Entity bullet : bulletList) {
             bullet.render(g);
-        }
-    }
-
-    public void initialiseEnemy(int amount) {
-        Random random = new Random();
-
-        int x = 0;
-        int y = 0;
-
-        if (random.nextInt() > 0.5) {
-            x = random.nextInt(panel.getWidth() - 100);
-        } else {
-            y = random.nextInt(panel.getHeight() - 100);
-        }
-
-        int randomSize = 32 + random.nextInt(64);
-
-        for (int i = 0; i <= amount; i++) {
-            asteroidList.add(new Asteroid(new Vector2f(x, y), this));
         }
     }
 }

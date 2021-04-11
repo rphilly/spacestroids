@@ -120,6 +120,12 @@ public class Sprite {
         y += yOffset;
     }
 
+    static int letterCount = 0;
+
+    public static int getLetterCount() {
+        return letterCount;
+    }
+
     public static void drawArray(Graphics2D g, Font f, String word, Vector2f pos, int width, int height, int xOffset, int yOffset) {
         double x = pos.x;
         double y = pos.y;
@@ -133,5 +139,7 @@ public class Sprite {
             x += xOffset;
             y += yOffset;
         }
+
+        letterCount = word.length();
     }
 }

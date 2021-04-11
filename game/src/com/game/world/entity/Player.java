@@ -49,12 +49,13 @@ public class Player extends Entity {
                 //repaint();
             }
         });
+
         timer.start();
     }
 
     public void shoot() {
         if (triggerCooldown == 0) {
-            new Bullet(this, imageAngleRad, game);
+            new Bullet(new Vector2f(position.x, position.y), imageAngleRad, game);
             game.attack = false;
             triggerCooldown = triggerDelay;
         }
@@ -65,7 +66,7 @@ public class Player extends Entity {
         pointer = e.getPointer();
         double dx = e.getX() - position.x;
         double dy = e.getY() - position.y;
-        imageAngleRad = Math.atan2(dy, dx) + 1.49; //90
+        imageAngleRad = Math.atan2(dy, dx) + 1.49;
         //repaint();
     }
 

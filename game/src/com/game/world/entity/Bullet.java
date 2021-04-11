@@ -18,9 +18,9 @@ public class Bullet extends Entity {
     private final BufferedImage bullet;
     private final double rotation;
 
-    public Bullet(Entity shooter, double rotation, Game game) {
-        super(new Vector2f(shooter.position.x, shooter.position.y), new Vector2f(0, 0), 0, game);
-        this.rotation = rotation;
+    public Bullet(Vector2f position, double rotation, Game game) {
+        super(position, new Vector2f(0, 0), 0, game);
+        this.rotation = rotation - 1.49;
 
         BufferedImage i = null;
         try {
@@ -43,20 +43,17 @@ public class Bullet extends Entity {
 
     @Override
     public void update() {
-        position.x += velocity.x;
-        position.y += velocity.y;
+        position.x += velocity.x + 2;
+        position.y += velocity.y + 2;
     }
 
     @Override
     public void render(Graphics2D g2d) {
         AffineTransform oldAT = g2d.getTransform();
+        g2d.translate(position.x + (float) bullet.getWidth() / 2, position.y + (float) bullet.getHeight() / 2);
         g2d.rotate(rotation);
-        //System.out.println(rotation);
+        g2d.translate(-position.x, -position.y);
         g2d.drawImage(bullet, (int) position.x, (int) position.y, null);
-        //g2d.setColor(Color.GREEN);
-        //g2d.drawRect((int) position.x, (int) position.y, 15, 15);
-        //g2d.drawRoundRect((int) position.x, (int) position.y, 25, 25, 25, 25);
-        //System.out.println("x: " + position.x + ", y: " + position.y);
         g2d.setTransform(oldAT);
     }
 }
