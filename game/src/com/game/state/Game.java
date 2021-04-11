@@ -1,5 +1,6 @@
 package com.game.state;
 
+import com.game.util.Sprite;
 import com.game.world.entity.Asteroid;
 import com.game.world.entity.Bullet;
 import com.game.world.entity.Entity;
@@ -17,14 +18,16 @@ public class Game extends State {
     Player player;
 
     public ArrayList<Entity> entityList;
-    ArrayList<Asteroid> asteroidList;
-    ArrayList<Bullet> bulletList;
+    public ArrayList<Asteroid> asteroidList;
+    public ArrayList<Bullet> bulletList;
+
+    public boolean attack;
 
     public Game(Panel panel) {
         super(panel);
         setupEntities();
 
-        player = new Player(this);
+        player = new Player(new Vector2f(100, 100), this);
 
         initialiseEnemy(1);
     }
@@ -39,8 +42,9 @@ public class Game extends State {
     public void input(Mouse mouse) {
         player.input(mouse);
 
-        for (Entity temp : bulletList) {
-            temp.input(mouse);
+        attack = mouse.getButton() == 1;
+        if (attack) {
+            player.shoot();
         }
     }
 
@@ -67,14 +71,6 @@ public class Game extends State {
 
         for (Entity bullet : bulletList) {
             bullet.render(g);
-        }
-    }
-
-    public void addObj(Entity temp) {
-        if (temp.getClass() == Bullet.class){
-            bulletList.add((Bullet) temp);
-        } else {
-            entityList.add(temp);
         }
     }
 

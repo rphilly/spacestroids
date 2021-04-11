@@ -20,14 +20,11 @@ public class Player extends Entity {
     private Point pointer;
     private double imageAngleRad = 0;
 
-    private boolean attack, keyLock;
+    int shotDelay = 15;
+    int shotCooldown = 0;
 
-    Panel panel;
-
-    public Player(Game game) {
-        super(new Vector2f(0, 0), new Vector2f(0, 0), 0, game);
-        position.x = 50;
-        position.y = 50;
+    public Player(Vector2f position, Game game) {
+        super(position, new Vector2f(0, 0), 0, game);
 
         BufferedImage i = null;
         try {
@@ -56,6 +53,14 @@ public class Player extends Entity {
         timer.start();
     }
 
+    public void shoot() {
+        if (shotCooldown == 0) {
+            new Bullet(this, imageAngleRad, game);
+            game.attack = false;
+            shotCooldown = shotDelay;
+        }
+    }
+
     @Override
     public void input(Mouse e) {
         pointer = e.getPointer();
@@ -63,22 +68,11 @@ public class Player extends Entity {
         double dy = e.getY() - position.y;
         imageAngleRad = Math.atan2(dy, dx) + 1.49; //90
         //repaint();
-
-        if (e.getButton() == -1) {
-            keyLock = true;
-        }
-
-        attack = e.getButton() == 1;
     }
 
     @Override
     public void update() {
-        if (attack) {
-            if (keyLock) {
-                game.addObj(new Bullet(this, imageAngleRad, game));
-                keyLock = false;
-            }
-        }
+        if (shotCooldown > 0) shotCooldown--;
     }
 
     @Override
