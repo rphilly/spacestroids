@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Sprite {
 
-    private final BufferedImage SPRITE_SHEET;
+    private BufferedImage SPRITE_SHEET;
     private BufferedImage[][] spriteArray;
     private final int TILE_SIZE = 64;
     public int w;

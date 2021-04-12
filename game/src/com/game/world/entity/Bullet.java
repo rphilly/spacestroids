@@ -30,8 +30,8 @@ public class Bullet extends Entity {
         }
         bullet = i;
 
-        velocity.x = (float) 0.5;
-        velocity.y = (float) 0.5;
+        velocity.x = (float) 7;
+        velocity.y = (float) 7;
 
         game.bulletList.add(this);
     }
@@ -43,8 +43,8 @@ public class Bullet extends Entity {
 
     @Override
     public void update() {
-        position.x += velocity.x + 2;
-        position.y += velocity.y + 2;
+        position.x += velocity.x * Math.cos(rotation);
+        position.y += velocity.y * Math.sin(rotation);
     }
 
     @Override

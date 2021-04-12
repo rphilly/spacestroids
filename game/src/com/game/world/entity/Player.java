@@ -2,6 +2,7 @@ package com.game.world.entity;
 
 import com.game.state.Game;
 import com.game.util.Mouse;
+import com.game.util.Sprite;
 import com.game.util.Vector2f;
 
 import javax.imageio.ImageIO;
@@ -17,7 +18,7 @@ public class Player extends Entity {
 
     private final BufferedImage player;
     private Point pointer;
-    private double imageAngleRad = 0;
+    private double radian = 0;
 
     int triggerDelay = 15;
     int triggerCooldown = 0;
@@ -27,7 +28,7 @@ public class Player extends Entity {
 
         BufferedImage i = null;
         try {
-            i = ImageIO.read(new File("res/entity/player/player4.png"));
+            i = ImageIO.read(new File("res/entity/player/player4-2.png"));
         } catch (IOException e) {
             System.out.println("ERROR: " + e);
         }
@@ -55,7 +56,7 @@ public class Player extends Entity {
 
     public void shoot() {
         if (triggerCooldown == 0) {
-            new Bullet(new Vector2f(position.x, position.y), imageAngleRad, game);
+            new Bullet(new Vector2f(position.x, position.y), radian, game);
             game.attack = false;
             triggerCooldown = triggerDelay;
         }
@@ -64,9 +65,9 @@ public class Player extends Entity {
     @Override
     public void input(Mouse e) {
         pointer = e.getPointer();
-        double dx = e.getX() - position.x;
-        double dy = e.getY() - position.y;
-        imageAngleRad = Math.atan2(dy, dx) + 1.49;
+        double x = e.getX() - position.x;
+        double y = e.getY() - position.y;
+        radian = Math.atan2(y, x) + 1.49;
         //repaint();
     }
 
@@ -77,15 +78,13 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics2D g2d) {
-        g2d.setRenderingHint(
-                RenderingHints.KEY_RENDERING,
-                RenderingHints.VALUE_RENDER_QUALITY);
-        int cx = player.getWidth() / 2;
-        int cy = player.getHeight() / 2;
+        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        int centerX = player.getWidth() / 2;
+        int centerY = player.getHeight() / 2;
         AffineTransform oldAT = g2d.getTransform();
-        g2d.translate(cx + position.x, cy + position.y);
-        g2d.rotate(imageAngleRad);
-        g2d.translate(-cx, -cy);
+        g2d.translate(centerX + position.x, centerY + position.y);
+        g2d.rotate(radian);
+        g2d.translate(-centerX, -centerY);
         g2d.drawImage(player, 0, 0, null);
         g2d.setTransform(oldAT);
     }

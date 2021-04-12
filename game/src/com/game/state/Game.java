@@ -27,34 +27,15 @@ public class Game extends State {
         super(panel);
         setupEntities();
 
-        player = new Player(new Vector2f(100, 100), this);
+        player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), this);
 
-        initialiseEnemy(1);
+        asteroidList.add(new Asteroid(new Vector2f(-10, -60), this));
     }
 
     void setupEntities() {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
-    }
-
-    public void initialiseEnemy(int amount) {
-        Random random = new Random();
-
-        int x = 0;
-        int y = 0;
-
-        if (random.nextInt() > 0.5) {
-            x = random.nextInt(panel.getWidth() - 100);
-        } else {
-            y = random.nextInt(panel.getHeight() - 100);
-        }
-
-        int randomSize = 32 + random.nextInt(64);
-
-        for (int i = 0; i <= amount; i++) {
-            asteroidList.add(new Asteroid(new Vector2f(x, y), this));
-        }
     }
 
     @Override
