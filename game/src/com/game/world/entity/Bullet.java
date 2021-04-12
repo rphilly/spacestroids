@@ -18,8 +18,8 @@ public class Bullet extends Entity {
     private final BufferedImage bullet;
     private final double rotation;
 
-    public Bullet(Vector2f position, double rotation, Game game) {
-        super(position, new Vector2f(0, 0), 0, game);
+    public Bullet(Vector2f position, double rotation, Game instance) {
+        super(position, new Vector2f(0, 0), 0, instance);
         this.rotation = rotation - 1.49;
 
         BufferedImage i = null;

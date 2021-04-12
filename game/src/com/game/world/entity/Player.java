@@ -23,8 +23,8 @@ public class Player extends Entity {
     int triggerDelay = 15;
     int triggerCooldown = 0;
 
-    public Player(Vector2f position, Game game) {
-        super(position, new Vector2f(0, 0), 0, game);
+    public Player(Vector2f position, Game instance) {
+        super(position, new Vector2f(0, 0), 0, instance);
 
         BufferedImage i = null;
         try {

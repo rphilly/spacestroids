@@ -80,6 +80,6 @@ public class Menu extends State {
         Sprite.drawArray(g, font, "Exit", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
 
         g.setColor(Color.GREEN);
-        g.drawLine(panel.getWidth() / 2, panel.getHeight(), panel.getWidth() / 2, 0);
+        //g.drawLine(panel.getWidth() / 2, panel.getHeight(), panel.getWidth() / 2, 0);
     }
 }

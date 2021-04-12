@@ -26,6 +26,7 @@ public class Game extends State {
     public Game(Panel panel) {
         super(panel);
         setupEntities();
+        checkCollision();
 
         player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), this);
 
@@ -36,6 +37,12 @@ public class Game extends State {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
+    }
+
+    void checkCollision() {
+        for (Asteroid asteroid : asteroidList) {
+            asteroid.checkBulletCollision();
+        }
     }
 
     @Override
