@@ -59,27 +59,27 @@ public class Menu extends State {
     String s = "SPACESTROIDS";
 
     @Override
-    public void render(Graphics2D g) {
-        uiManager.render(g);
+    public void render(Graphics2D g2d) {
+        uiManager.render(g2d);
 
         java.awt.Font f = new Font("Arial", java.awt.Font.BOLD, 64);
-        g.setFont(f);
-        g.setColor(Color.WHITE);
+        g2d.setFont(f);
+        g2d.setColor(Color.WHITE);
 
-        FontMetrics fm = g.getFontMetrics();
+        FontMetrics fm = g2d.getFontMetrics();
 
         x = panel.getWidth() / 2 - fm.stringWidth(s) / 2;
         y = panel.getHeight() / 2 - fm.getHeight();
 
         //g.drawString(s, x, y); //centered
 
-        Sprite.drawArray(g, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 190, 100), 64, 64, 30, 0); //230
-        Sprite.drawArray(g, font, "Play", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
-        Sprite.drawArray(g, font, "Hiscores", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 14, 0);
-        Sprite.drawArray(g, font, "Options", new Vector2f((float) panel.getWidth() / 2 - 60, 400), 32, 32, 14, 0);
-        Sprite.drawArray(g, font, "Exit", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
+        Sprite.drawArray(g2d, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 190, 100), 64, 64, 30, 0); //230
+        Sprite.drawArray(g2d, font, "Play", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
+        Sprite.drawArray(g2d, font, "Hiscores", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 14, 0);
+        Sprite.drawArray(g2d, font, "Options", new Vector2f((float) panel.getWidth() / 2 - 60, 400), 32, 32, 14, 0);
+        Sprite.drawArray(g2d, font, "Exit", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
 
-        g.setColor(Color.GREEN);
+        g2d.setColor(Color.GREEN);
         //g.drawLine(panel.getWidth() / 2, panel.getHeight(), panel.getWidth() / 2, 0);
     }
 }

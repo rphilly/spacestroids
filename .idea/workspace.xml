@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b1f2dcf-3a78-4fec-abdf-fbafe137075a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/engine/view/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/engine/view/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/engine/view/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/engine/view/Panel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/state/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/state/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/ui/UiObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/ui/UiObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/util/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/util/Mouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/util/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/util/Sprite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Asteroid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Bullet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/game/out/production/GAME/com/game/world/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/com/game/engine/view/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/com/game/engine/view/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/com/game/state/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/com/game/state/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/src/com/game/world/entity/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/com/game/world/entity/Asteroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/com/game/world/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/com/game/world/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/src/com/game/world/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/src/com/game/world/entity/Player.java" afterDir="false" />
     </list>
@@ -45,6 +49,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617820408475</updated>
       <workItem from="1617820410193" duration="14000" />
+      <workItem from="1618253322310" duration="42000" />
+      <workItem from="1618253375340" duration="603000" />
     </task>
     <servers />
   </component>
@@ -52,9 +58,9 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1617820422159">
+    <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1618253379221">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="740" y="314" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1617820422159" />
+    <state x="740" y="314" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1618253379221" />
   </component>
 </project>

@@ -16,11 +16,9 @@ public class Bullet extends Entity {
 
     //private final Sprite b = new Sprite("entity/player/bullet.png");
     private final BufferedImage bullet;
-    private final double rotation;
 
     public Bullet(Vector2f position, double rotation, Game instance) {
-        super(position, new Vector2f(0, 0), 0, instance);
-        this.rotation = rotation - 1.49;
+        super(position, new Vector2f(0, 0), new Vector2f(0, 0), rotation - 1.49, instance);
 
         BufferedImage i = null;
         try {

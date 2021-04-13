@@ -1,6 +1,5 @@
 package com.game.state;
 
-import com.game.util.Sprite;
 import com.game.world.entity.Asteroid;
 import com.game.world.entity.Bullet;
 import com.game.world.entity.Entity;
@@ -11,7 +10,6 @@ import com.game.engine.view.Panel;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Game extends State {
 
@@ -26,23 +24,16 @@ public class Game extends State {
     public Game(Panel panel) {
         super(panel);
         setupEntities();
-        checkCollision();
 
-        player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), this);
+        player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), new Vector2f(39, 62),0, this);
 
-        asteroidList.add(new Asteroid(new Vector2f(-10, -60), this));
+        new Asteroid(new Vector2f(100, 250), new Vector2f(64, 64), 0,this);
     }
 
     void setupEntities() {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
-    }
-
-    void checkCollision() {
-        for (Asteroid asteroid : asteroidList) {
-            asteroid.checkBulletCollision();
-        }
     }
 
     @Override
@@ -69,15 +60,15 @@ public class Game extends State {
     }
 
     @Override
-    public void render(Graphics2D g) {
-        player.render(g);
+    public void render(Graphics2D g2d) {
+        player.render(g2d);
 
         for (Entity asteroid : asteroidList) {
-            asteroid.render(g);
+            asteroid.render(g2d);
         }
 
         for (Entity bullet : bulletList) {
-            bullet.render(g);
+            bullet.render(g2d);
         }
     }
 }

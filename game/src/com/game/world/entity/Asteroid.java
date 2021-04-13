@@ -7,18 +7,14 @@ import com.game.util.Vector2f;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
 public class Asteroid extends Entity {
 
     private final BufferedImage asteroid;
 
-    private static final Random random = new Random();
+    public Asteroid(Vector2f position, Vector2f size, double rotation, Game instance) {
+        super(position, new Vector2f(0, 0), size, rotation, instance);
 
-    public Asteroid(Vector2f position, Game instance) {
-        super(position, new Vector2f(0, 0), 0, instance);
-
-        int x = random.nextInt(4);
         Sprite asteroidSheet = new Sprite("entity/enemy/sprite_sheet.png");
         asteroid = asteroidSheet.getSprite(3, 0);
 
@@ -26,18 +22,8 @@ public class Asteroid extends Entity {
         velocity.y = 1;
 
         game.asteroidList.add(this);
-    }
 
-    public void checkBulletCollision() {
-        for (int i = 0; i < game.bulletList.size(); i++) {
-            boolean isDetected = collisionCheck(game.bulletList.get(i));
-            System.out.println("hey?");
-
-            if (isDetected) {
-                this.remove();
-                game.bulletList.get(i).remove();
-            }
-        }
+        System.out.println(getSize());
     }
 
     @Override
@@ -53,7 +39,7 @@ public class Asteroid extends Entity {
 
     @Override
     public void render(Graphics2D g2d) {
-        g2d.drawImage(asteroid, (int) position.x, (int) position.y, 48, 48, null);
+        g2d.drawImage(asteroid, (int) position.x, (int) position.y, (int) size.x, (int) size.y, null);
     }
 
     void remove() {

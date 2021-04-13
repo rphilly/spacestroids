@@ -17,7 +17,7 @@ public class Panel extends JPanel implements Runnable {
     private boolean isRunning = false;
 
     private BufferedImage img;
-    private Graphics2D g;
+    private Graphics2D g2d;
 
     private Mouse mouse;
 
@@ -58,7 +58,7 @@ public class Panel extends JPanel implements Runnable {
 
     public void initialise() {
         img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        g = (Graphics2D) img.getGraphics();
+        g2d = (Graphics2D) img.getGraphics();
 
         mouse = new Mouse(this);
 
@@ -122,27 +122,27 @@ public class Panel extends JPanel implements Runnable {
     }
 
     public void render() {
-        if (g != null) {
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, width, height);
+        if (g2d != null) {
+            g2d.setColor(Color.BLACK);
+            g2d.fillRect(0, 0, width, height);
 
             //Setup FPS
             if (showFPS) {
-                g.setFont(new Font("Times New Roman", Font.BOLD, 14));
-                g.setColor(Color.GREEN);
-                g.drawString(fpsString, 40, 40);
+                g2d.setFont(new Font("Times New Roman", Font.BOLD, 14));
+                g2d.setColor(Color.GREEN);
+                g2d.drawString(fpsString, 40, 40);
             }
         }
 
         if (State.getState() != null) {
-            State.getState().render(g);
+            State.getState().render(g2d);
         }
     }
 
     public void draw() {
-        Graphics g2 = this.getGraphics();
-        g2.drawImage(img, 0, 0, width, height, null);
-        g2.dispose();
+        Graphics g = this.getGraphics();
+        g.drawImage(img, 0, 0, width, height, null);
+        g.dispose();
     }
 
     public Mouse getMouseHandler() {

@@ -2,7 +2,6 @@ package com.game.world.entity;
 
 import com.game.state.Game;
 import com.game.util.Mouse;
-import com.game.util.Sprite;
 import com.game.util.Vector2f;
 
 import javax.imageio.ImageIO;
@@ -18,13 +17,12 @@ public class Player extends Entity {
 
     private final BufferedImage player;
     private Point pointer;
-    private double radian = 0;
 
     int triggerDelay = 15;
     int triggerCooldown = 0;
 
-    public Player(Vector2f position, Game instance) {
-        super(position, new Vector2f(0, 0), 0, instance);
+    public Player(Vector2f position, Vector2f size, double rotation, Game instance) {
+        super(position, new Vector2f(0, 0), size, rotation, instance);
 
         BufferedImage i = null;
         try {
@@ -56,7 +54,7 @@ public class Player extends Entity {
 
     public void shoot() {
         if (triggerCooldown == 0) {
-            new Bullet(new Vector2f(position.x, position.y), radian, game);
+            new Bullet(new Vector2f(position.x, position.y), rotation, game);
             game.attack = false;
             triggerCooldown = triggerDelay;
         }
@@ -67,7 +65,7 @@ public class Player extends Entity {
         pointer = e.getPointer();
         double x = e.getX() - position.x;
         double y = e.getY() - position.y;
-        radian = Math.atan2(y, x) + 1.49;
+        rotation = Math.atan2(y, x) + 1.49;
         //repaint();
     }
 
@@ -78,14 +76,16 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics2D g2d) {
+        super.render(g2d);
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         int centerX = player.getWidth() / 2;
         int centerY = player.getHeight() / 2;
         AffineTransform oldAT = g2d.getTransform();
         g2d.translate(centerX + position.x, centerY + position.y);
-        g2d.rotate(radian);
+        g2d.rotate(rotation);
         g2d.translate(-centerX, -centerY);
-        g2d.drawImage(player, 0, 0, null);
+        g2d.drawImage(player, 0, 0, (int) size.x, (int) size.y, null);
+        //System.out.println("player W: " + player.getWidth() + ", H: " + player.getHeight()); //39, 62
         g2d.setTransform(oldAT);
     }
 }
