@@ -28,6 +28,10 @@ public class Game extends State {
         player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), new Vector2f(39, 62),0, this);
 
         new Asteroid(new Vector2f(100, 250), new Vector2f(64, 64), 0,this);
+        new Asteroid(new Vector2f(150, 80), new Vector2f(64, 64), 0,this);
+        new Asteroid(new Vector2f(200, 0), new Vector2f(64, 64), 0,this);
+        new Asteroid(new Vector2f(250, 40), new Vector2f(64, 64), 0,this);
+        new Asteroid(new Vector2f(800, 0), new Vector2f(64, 64), 0,this);
     }
 
     void setupEntities() {

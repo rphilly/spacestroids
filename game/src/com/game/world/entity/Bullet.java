@@ -47,11 +47,18 @@ public class Bullet extends Entity {
 
     @Override
     public void render(Graphics2D g2d) {
+        super.render(g2d);
         AffineTransform oldAT = g2d.getTransform();
         g2d.translate(position.x + (float) bullet.getWidth() / 2, position.y + (float) bullet.getHeight() / 2);
         g2d.rotate(rotation);
         g2d.translate(-position.x, -position.y);
         g2d.drawImage(bullet, (int) position.x, (int) position.y, null);
         g2d.setTransform(oldAT);
+    }
+
+    @Override
+    void remove() {
+        super.remove();
+        game.bulletList.remove(this);
     }
 }

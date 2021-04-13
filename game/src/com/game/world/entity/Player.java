@@ -36,8 +36,8 @@ public class Player extends Entity {
         Timer timer = new Timer(25, e -> {
             if (pointer != null) {
 
-                int centerX = (int) position.x + (player.getWidth() / 2);
-                int centerY = (int) position.y + (player.getHeight() / 2);
+                int centerX = (int) position.x + (player.getWidth());
+                int centerY = (int) position.y + (player.getHeight());
 
                 if (pointer.x != centerX) {
                     position.x += pointer.x < centerX ? -1 : 1;

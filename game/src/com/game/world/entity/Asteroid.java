@@ -26,6 +26,17 @@ public class Asteroid extends Entity {
         System.out.println(getSize());
     }
 
+    public void checkBulletCollision() {
+        for (int i = 0; i < game.bulletList.size(); i++) {
+            boolean collisionDetected = collisionDetection(game.bulletList.get(i));
+
+            if (collisionDetected) {
+                this.remove();
+                game.bulletList.get(i).remove();
+            }
+        }
+    }
+
     @Override
     public void input(Mouse mouse) {
 
@@ -35,15 +46,19 @@ public class Asteroid extends Entity {
     public void update() {
         position.x += velocity.x;
         position.y += velocity.y;
+
+        checkBulletCollision();
     }
 
     @Override
     public void render(Graphics2D g2d) {
+        super.render(g2d);
         g2d.drawImage(asteroid, (int) position.x, (int) position.y, (int) size.x, (int) size.y, null);
     }
 
+    @Override
     void remove() {
         super.remove();
-        game.asteroidList.remove(this);
+        //game.asteroidList.remove(this);
     }
 }

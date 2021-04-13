@@ -13,7 +13,7 @@ public abstract class Entity {
     protected Game game;
 
     Rectangle bounds;
-    boolean isDrawingBounds = true;
+    boolean isDrawingBounds;
 
     public Entity(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
         this.position = position;
@@ -22,6 +22,7 @@ public abstract class Entity {
         this.rotation = rotation;
         game = instance;
 
+        isDrawingBounds = true;
         bounds = new Rectangle((int) position.x, (int) position.y, (int) size.x, (int) size.y);
 
         game.entityList.add(this);
@@ -37,10 +38,18 @@ public abstract class Entity {
 
     void drawBounds(Graphics2D g2d) {
         if (isDrawingBounds) {
-            Rectangle outline = this.getOutline();
+            bounds = this.getOutline();
             g2d.setColor(Color.RED);
-            g2d.drawRect((int) position.x, (int) position.y, (int) outline.getWidth(), (int) outline.getHeight());
+            g2d.drawRect((int) position.x, (int) position.y, (int) bounds.getWidth(), (int) bounds.getHeight());
         }
+    }
+
+    boolean collisionDetection(Entity entity) {
+        double deltaX = position.x - entity.position.x; //Distance in between objects
+        double deltaY = position.y - entity.position.y;
+        double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+        return distance < (size.x + size.y) + (entity.size.x + entity.size.y);
     }
 
     void remove() {
