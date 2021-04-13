@@ -1,7 +1,6 @@
 package com.game.world.entity;
 
 import com.game.state.Game;
-import com.game.util.AABB;
 import com.game.util.Mouse;
 import com.game.util.Vector2f;
 
@@ -13,7 +12,7 @@ public abstract class Entity {
     protected double rotation;
     protected Game game;
 
-    AABB bounds;
+    Rectangle bounds;
     boolean isDrawingBounds = true;
 
     public Entity(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
@@ -23,7 +22,7 @@ public abstract class Entity {
         this.rotation = rotation;
         game = instance;
 
-        bounds = new AABB(position, (int) size.x, (int) size.y);
+        bounds = new Rectangle((int) position.x, (int) position.y, (int) size.x, (int) size.y);
 
         game.entityList.add(this);
     }
@@ -38,9 +37,9 @@ public abstract class Entity {
 
     void drawBounds(Graphics2D g2d) {
         if (isDrawingBounds) {
-            AABB bounds = this.getBounds();
+            Rectangle outline = this.getOutline();
             g2d.setColor(Color.RED);
-            g2d.drawRect((int) bounds.position.x, (int) bounds.position.y, (int) bounds.getWidth(), (int) bounds.getHeight());
+            g2d.drawRect((int) position.x, (int) position.y, (int) outline.getWidth(), (int) outline.getHeight());
         }
     }
 
@@ -56,7 +55,7 @@ public abstract class Entity {
         return size;
     }
 
-    public AABB getBounds() {
+    public Rectangle getOutline() {
         return bounds;
     }
 }
