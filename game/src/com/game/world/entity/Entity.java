@@ -23,7 +23,6 @@ public abstract class Entity {
         game = instance;
 
         isDrawingBounds = true;
-        bounds = new Rectangle((int) position.x, (int) position.y, (int) size.x, (int) size.y);
 
         game.entityList.add(this);
     }
@@ -38,7 +37,7 @@ public abstract class Entity {
 
     void drawBounds(Graphics2D g2d) {
         if (isDrawingBounds) {
-            bounds = this.getOutline();
+            bounds = this.getBounds();
             g2d.setColor(Color.RED);
             g2d.drawRect((int) position.x, (int) position.y, (int) bounds.getWidth(), (int) bounds.getHeight());
         }
@@ -64,7 +63,7 @@ public abstract class Entity {
         return size;
     }
 
-    public Rectangle getOutline() {
-        return bounds;
+    public Rectangle getBounds() {
+        return new Rectangle((int) position.x, (int) position.y, (int) size.x, (int) size.y);
     }
 }

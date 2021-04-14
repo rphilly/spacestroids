@@ -54,7 +54,7 @@ public class Player extends Entity {
 
     public void shoot() {
         if (triggerCooldown == 0) {
-            new Bullet(new Vector2f(position.x, position.y), rotation, game);
+            game.bulletList.add(new Bullet(new Vector2f(position.x, position.y), rotation, game));
             game.attack = false;
             triggerCooldown = triggerDelay;
         }

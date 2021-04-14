@@ -30,8 +30,6 @@ public class Bullet extends Entity {
 
         velocity.x = (float) 7;
         velocity.y = (float) 7;
-
-        game.bulletList.add(this);
     }
 
     @Override
