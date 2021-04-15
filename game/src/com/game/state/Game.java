@@ -10,6 +10,7 @@ import com.game.engine.view.Panel;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Game extends State {
 
@@ -24,20 +25,32 @@ public class Game extends State {
     public Game(Panel panel) {
         super(panel);
         setupEntities();
+        setupAsteroids(10);
 
-        player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), new Vector2f(39, 62),0, this);
-
-        new Asteroid(new Vector2f(100, 250), new Vector2f(64, 64), 0,this);
-        new Asteroid(new Vector2f(150, 80), new Vector2f(64, 64), 0,this);
-        new Asteroid(new Vector2f(200, 0), new Vector2f(64, 64), 0,this);
-        new Asteroid(new Vector2f(250, 40), new Vector2f(64, 64), 0,this);
-        new Asteroid(new Vector2f(800, 0), new Vector2f(64, 64), 0,this);
+        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(39, 62),0, this);
     }
 
     void setupEntities() {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
+    }
+
+    void setupAsteroids(int amount) {
+        Random random = new Random();
+
+        for (int i = 0; i < amount; i++) {
+            int x = random.nextInt(Entity.WIDTH);
+            int y = random.nextInt(Entity.HEIGHT);
+
+            float differenceX = (float) Math.random();
+            float differenceY = (float) Math.random();
+
+            Vector2f position = new Vector2f(x, y);
+            Vector2f velocity = new Vector2f(differenceX, differenceY);
+
+            new Asteroid(position, velocity, new Vector2f(64, 64), 0,this);
+        }
     }
 
     @Override
@@ -54,11 +67,15 @@ public class Game extends State {
     public void update() {
         player.update();
 
-        for (Entity asteroid : asteroidList) {
+        for (Asteroid asteroid : asteroidList) {
+            asteroid.checkBulletCollision();
             asteroid.update();
         }
 
-        for (Entity bullet : bulletList) {
+        asteroidList.removeAll(Asteroid.tempList);
+        Asteroid.tempList.clear();
+
+        for (Bullet bullet : bulletList) {
             bullet.update();
         }
     }
@@ -67,11 +84,11 @@ public class Game extends State {
     public void render(Graphics2D g2d) {
         player.render(g2d);
 
-        for (Entity asteroid : asteroidList) {
+        for (Asteroid asteroid : asteroidList) {
             asteroid.render(g2d);
         }
 
-        for (Entity bullet : bulletList) {
+        for (Bullet bullet : bulletList) {
             bullet.render(g2d);
         }
     }

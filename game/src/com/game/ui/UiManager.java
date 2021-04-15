@@ -18,6 +18,11 @@ public class UiManager {
     }
 
     public void render(Graphics g) {
+        if (g == null) {
+            System.out.println(this);
+            return;
+        }
+
         for (UiObject o : objects)
             o.render(g);
     }

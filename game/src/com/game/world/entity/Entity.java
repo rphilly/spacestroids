@@ -1,5 +1,7 @@
 package com.game.world.entity;
 
+import com.game.engine.Launcher;
+import com.game.engine.view.Panel;
 import com.game.state.Game;
 import com.game.util.Mouse;
 import com.game.util.Vector2f;
@@ -15,6 +17,9 @@ public abstract class Entity {
     Rectangle bounds;
     boolean isDrawingBounds;
 
+    public static final int WIDTH = Launcher.launcher.getFrame().getWidth();
+    public static final int HEIGHT = Launcher.launcher.getFrame().getHeight();
+
     public Entity(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
         this.position = position;
         this.velocity = velocity;
@@ -22,7 +27,7 @@ public abstract class Entity {
         this.rotation = rotation;
         game = instance;
 
-        isDrawingBounds = true;
+        isDrawingBounds = false;
 
         game.entityList.add(this);
     }
@@ -39,7 +44,10 @@ public abstract class Entity {
         if (isDrawingBounds) {
             bounds = this.getBounds();
             g2d.setColor(Color.RED);
-            g2d.drawRect((int) position.x, (int) position.y, (int) bounds.getWidth(), (int) bounds.getHeight());
+            //g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
+                    //(int) bounds.getWidth(), (int) bounds.getHeight());
+            g2d.drawOval((int) position.x - ((int) size.x + (int) size.y) / 4, (int) position.y - ((int) size.x + (int) size.y) / 4,
+                    ((int) size.x + (int) size.y) / 2, ((int) size.x + (int) size.y) / 2);
         }
     }
 
@@ -48,7 +56,7 @@ public abstract class Entity {
         double deltaY = position.y - entity.position.y;
         double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-        return distance < (size.x + size.y) + (entity.size.x + entity.size.y);
+        return distance < (size.x + size.y) / 2 + (entity.size.x + entity.size.y) / 2;
     }
 
     void remove() {

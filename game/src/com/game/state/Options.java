@@ -3,7 +3,6 @@ package com.game.state;
 import com.game.engine.view.Panel;
 import com.game.ui.UiButton;
 import com.game.ui.UiManager;
-import com.game.util.Font;
 import com.game.util.Mouse;
 import com.game.util.Sprite;
 import com.game.util.Vector2f;
@@ -22,17 +21,12 @@ public class Options extends State {
 
         //Controls
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 260, 140, 45, () -> {
-
+            //
         }));
 
         //Scale
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 326, 140, 45, () -> {
-            panel.showFPS = true;
-        }));
-
-        //Options
-        uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 392, 140, 45, () -> {
-            //System.exit(0);
+            panel.showFPS = !panel.showFPS;
         }));
 
         //Exit

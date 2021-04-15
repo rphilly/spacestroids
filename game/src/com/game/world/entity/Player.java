@@ -1,5 +1,6 @@
 package com.game.world.entity;
 
+import com.game.engine.Launcher;
 import com.game.state.Game;
 import com.game.util.Mouse;
 import com.game.util.Vector2f;
@@ -33,7 +34,7 @@ public class Player extends Entity {
         player = i;
 
         //Continuously evaluate current mouse & image position
-        Timer timer = new Timer(25, e -> {
+        Timer timer = new Timer(5, e -> {
             if (pointer != null) {
 
                 int centerX = (int) position.x + (player.getWidth());
@@ -54,7 +55,7 @@ public class Player extends Entity {
 
     public void shoot() {
         if (triggerCooldown == 0) {
-            game.bulletList.add(new Bullet(new Vector2f(position.x, position.y), rotation, game));
+            game.bulletList.add(new Bullet(new Vector2f(position.x, position.y), new Vector2f(10, 20), rotation, game));
             game.attack = false;
             triggerCooldown = triggerDelay;
         }
@@ -72,6 +73,22 @@ public class Player extends Entity {
     @Override
     public void update() {
         if (triggerCooldown > 0) triggerCooldown--;
+
+        //System.out.println(position);
+
+        if (position.x < 0) {
+            position.x = WIDTH + getSize().x;
+
+        } else if (position.x >= WIDTH - 20) {
+            //position.x = -getSize().x;
+        }
+
+        if (position.y < -getSize().y / 2) {
+            position.y = 720 + getSize().y;
+
+        } else if (position.y >= 719 - getSize().y) {
+            //position.y = -getSize().y;
+        }
     }
 
     @Override

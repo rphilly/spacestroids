@@ -17,8 +17,8 @@ public class Bullet extends Entity {
     //private final Sprite b = new Sprite("entity/player/bullet.png");
     private final BufferedImage bullet;
 
-    public Bullet(Vector2f position, double rotation, Game instance) {
-        super(position, new Vector2f(0, 0), new Vector2f(0, 0), rotation - 1.49, instance);
+    public Bullet(Vector2f position, Vector2f size, double rotation, Game instance) {
+        super(position, new Vector2f(0, 0), size, rotation - 1.49, instance);
 
         BufferedImage i = null;
         try {
@@ -50,7 +50,7 @@ public class Bullet extends Entity {
         g2d.translate(position.x + (float) bullet.getWidth() / 2, position.y + (float) bullet.getHeight() / 2);
         g2d.rotate(rotation);
         g2d.translate(-position.x, -position.y);
-        g2d.drawImage(bullet, (int) position.x, (int) position.y, null);
+        g2d.drawImage(bullet, (int) position.x - (int) size.x / 2, (int) position.y - (int) size.y / 2, null);
         g2d.setTransform(oldAT);
     }
 

@@ -21,6 +21,11 @@ public class UiButton extends UiObject {
 
     @Override
     public void render(Graphics g) {
+        if (g == null) {
+            System.out.println(this);
+            return;
+        }
+
         if (hovering) {
             g.setColor(Color.BLUE);
         } else {

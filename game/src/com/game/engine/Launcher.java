@@ -4,12 +4,19 @@ import com.game.engine.view.Frame;
 
 public class Launcher {
 
+    private final Frame frame;
+    public static Launcher launcher;
+
     public Launcher() {
-        new Frame();
+        frame = new Frame();
     }
 
     public static void main(String[] args) {
-        new Launcher();
+        launcher = new Launcher();
+    }
+
+    public Frame getFrame() {
+        return frame;
     }
 }
 

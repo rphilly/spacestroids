@@ -1,8 +1,10 @@
 package com.game.engine.view;
 
+import com.game.state.Game;
 import com.game.state.Menu;
 import com.game.state.State;
 import com.game.util.Mouse;
+import com.game.world.entity.Entity;
 
 import javax.swing.*;
 import java.awt.*;
@@ -59,6 +61,11 @@ public class Panel extends JPanel implements Runnable {
     public void initialise() {
         img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         g2d = (Graphics2D) img.getGraphics();
+
+        if (g2d == null) {
+            System.out.println(this);
+            return;
+        }
 
         mouse = new Mouse(this);
 

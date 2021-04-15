@@ -34,6 +34,9 @@ public class Mouse implements MouseListener, MouseMotionListener {
         y = e.getY();
         pointer = e.getPoint();
 
+        if (uiManager != null)
+            uiManager.onMouseMove(e);
+
         //System.out.println(x + ", " + y);
     }
 

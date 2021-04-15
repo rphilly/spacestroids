@@ -26,9 +26,6 @@ public abstract class UiObject {
 
     public void onMouseMove(MouseEvent e) {
         hovering = bounds.contains(e.getX(), e.getY());
-        if (hovering) {
-            System.out.println("mouse on screen");
-        }
     }
 
     public void onMouseRelease(MouseEvent e) { //NOTE: checks all buttons
