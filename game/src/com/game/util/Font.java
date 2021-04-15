@@ -2,12 +2,13 @@ package com.game.util;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.util.Objects;
 
 public class Font {
 
     private final BufferedImage FONTSHEET;
     private BufferedImage[][] spriteArray;
-    private final int TILE_SIZE = 32;
+    private final int TILE_SIZE = 32; //unused
     public int w;
     public int h;
     private int wLetter;
@@ -64,7 +65,7 @@ public class Font {
     private BufferedImage loadFont(String file) {
         BufferedImage sprite = null;
         try {
-            sprite = ImageIO.read(getClass().getClassLoader().getResourceAsStream(file));
+            sprite = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(file)));
         } catch(Exception e) {
             System.out.println("Error: could not load sprite: " + file);
         }

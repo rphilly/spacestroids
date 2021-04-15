@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Game extends State {
 
-    Player player;
+    private final Player player;
 
     public ArrayList<Entity> entityList;
     public ArrayList<Asteroid> asteroidList;
@@ -25,7 +25,7 @@ public class Game extends State {
     public Game(Panel panel) {
         super(panel);
         setupEntities();
-        setupAsteroids(10);
+        spawnAsteroids(15);
 
         player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(39, 62),0, this);
     }
@@ -36,7 +36,7 @@ public class Game extends State {
         bulletList = new ArrayList<>();
     }
 
-    void setupAsteroids(int amount) {
+    void spawnAsteroids(int amount) {
         Random random = new Random();
 
         for (int i = 0; i < amount; i++) {
@@ -77,6 +77,11 @@ public class Game extends State {
 
         for (Bullet bullet : bulletList) {
             bullet.update();
+        }
+
+        if (asteroidList.size() == 0)
+        {
+            spawnAsteroids(5);
         }
     }
 

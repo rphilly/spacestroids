@@ -39,6 +39,7 @@ public class Bullet extends Entity {
 
     @Override
     public void update() {
+        super.update();
         position.x += velocity.x * Math.cos(rotation);
         position.y += velocity.y * Math.sin(rotation);
     }

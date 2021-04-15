@@ -34,7 +34,7 @@ public class Player extends Entity {
         player = i;
 
         //Continuously evaluate current mouse & image position
-        Timer timer = new Timer(5, e -> {
+        Timer timer = new Timer(20, e -> {
             if (pointer != null) {
 
                 int centerX = (int) position.x + (player.getWidth());
@@ -72,23 +72,8 @@ public class Player extends Entity {
 
     @Override
     public void update() {
+        super.update();
         if (triggerCooldown > 0) triggerCooldown--;
-
-        //System.out.println(position);
-
-        if (position.x < 0) {
-            position.x = WIDTH + getSize().x;
-
-        } else if (position.x >= WIDTH - 20) {
-            //position.x = -getSize().x;
-        }
-
-        if (position.y < -getSize().y / 2) {
-            position.y = 720 + getSize().y;
-
-        } else if (position.y >= 719 - getSize().y) {
-            //position.y = -getSize().y;
-        }
     }
 
     @Override

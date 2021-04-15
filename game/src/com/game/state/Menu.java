@@ -6,10 +6,8 @@ import com.game.ui.UiButton;
 import com.game.ui.UiManager;
 import com.game.util.Vector2f;
 import com.game.engine.view.Panel;
-import com.game.world.entity.Asteroid;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Menu extends State {
 
@@ -51,12 +49,7 @@ public class Menu extends State {
     @Override
     public void update() {
         uiManager.tick();
-
-        //System.out.println(game.getMouseHandler().getX() + "   " + game.getMouseHandler().getY());
     }
-
-    int x, y;
-    String s = "SPACESTROIDS";
 
     @Override
     public void render(Graphics2D g2d) {
@@ -68,12 +61,14 @@ public class Menu extends State {
 
         FontMetrics fm = g2d.getFontMetrics();
 
-        x = panel.getWidth() / 2 - fm.stringWidth(s) / 2;
-        y = panel.getHeight() / 2 - fm.getHeight();
+        int x = panel.getWidth() / 2 - fm.stringWidth("SPACESTROIDS") / 2;
+        int y = panel.getHeight() / 2 - fm.getHeight();
 
         //g.drawString(s, x, y); //centered
 
-        Sprite.drawArray(g2d, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 190, 100), 64, 64, 30, 0); //230
+        Sprite.drawArray(g2d, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 192, 100), 64, 64, 30, 0); //230
+        //g2d.drawRect(panel.getWidth() / 2 - 192, 100, 360, 64);
+        //System.out.println(font.getWidth() + ", h: " + font.getHeight());
         Sprite.drawArray(g2d, font, "Play", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
         Sprite.drawArray(g2d, font, "Hiscores", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 14, 0);
         Sprite.drawArray(g2d, font, "Options", new Vector2f((float) panel.getWidth() / 2 - 60, 400), 32, 32, 14, 0);

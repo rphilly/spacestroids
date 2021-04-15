@@ -42,6 +42,7 @@ public class Asteroid extends Entity {
 
     @Override
     public void update() {
+        super.update();
         position.x += velocity.x;
         position.y += velocity.y;
     }
