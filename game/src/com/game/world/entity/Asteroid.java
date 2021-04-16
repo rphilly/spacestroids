@@ -1,7 +1,7 @@
 package com.game.world.entity;
 
 import com.game.state.Game;
-import com.game.util.Mouse;
+import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
 
 import java.awt.*;
@@ -16,7 +16,7 @@ public class Asteroid extends Entity {
     public Asteroid(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
         super(position, velocity, size, rotation, "entity/enemy/asteroid.png", instance);
 
-        sizeFactor = Math.max(size.x, size.y) / 32;
+        sizeFactor = Math.min(size.x, size.y) / 32;
 
         game.asteroidList.add(this);
     }
@@ -42,7 +42,7 @@ public class Asteroid extends Entity {
     }
 
     @Override
-    public void input(Mouse mouse) {
+    public void input(MouseHandler mouse) {
 
     }
 

@@ -12,7 +12,7 @@ public class UiManager {
         objects = new ArrayList<>();
     }
 
-    public void tick() {
+    public void update() {
         for (UiObject o : objects)
             o.tick();
     }

@@ -1,7 +1,7 @@
 package com.game.world.entity;
 
 import com.game.state.Game;
-import com.game.util.Mouse;
+import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
 
 import javax.swing.Timer;
@@ -16,7 +16,7 @@ public class Player extends Entity {
     int triggerCooldown = 0;
 
     public Player(Vector2f position, Vector2f size, double rotation, Game instance) {
-        super(position, new Vector2f(0, 0), size, rotation, "entity/player/player1.png", instance);
+        super(position, new Vector2f(0, 0), size, rotation, "entity/player/player4-2.png", instance);
 
         //Continuously evaluate current mouse & image position
         Timer timer = new Timer(20, e -> {
@@ -47,7 +47,7 @@ public class Player extends Entity {
     }
 
     @Override
-    public void input(Mouse e) {
+    public void input(MouseHandler e) {
         pointer = e.getPointer();
         double x = e.getX() - position.x;
         double y = e.getY() - position.y;

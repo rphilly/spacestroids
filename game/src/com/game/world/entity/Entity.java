@@ -2,8 +2,8 @@ package com.game.world.entity;
 
 import com.game.engine.Launcher;
 import com.game.state.Game;
-import com.game.util.Mouse;
-import com.game.util.Sprite;
+import com.game.util.MouseHandler;
+import com.game.util.SpriteLoader;
 import com.game.util.Vector2f;
 
 import java.awt.*;
@@ -15,7 +15,7 @@ public abstract class Entity {
 
     protected Vector2f position, velocity, size;
     protected double rotation;
-    protected Sprite sprite;
+    protected SpriteLoader sprite;
     protected Game game;
 
     Rectangle bounds;
@@ -26,7 +26,7 @@ public abstract class Entity {
         this.velocity = velocity;
         this.size = size;
         this.rotation = rotation;
-        this.sprite = new Sprite(path);
+        this.sprite = new SpriteLoader(path);
         game = instance;
 
         isDrawingBounds = true;
@@ -54,22 +54,26 @@ public abstract class Entity {
     }
 
     private void setupWrap() {
+        //right
         if (position.x < -size.x) {
             position.x = WIDTH + size.x;
 
+        //left
         } else if (position.x > WIDTH + size.x) {
             position.x = -size.x;
         }
 
+        //top
         if (position.y < -size.y) {
             position.y = HEIGHT + size.y;
 
+        //bottom
         } else if (position.y > HEIGHT + size.y) {
             position.y = -size.y;
         }
     }
 
-    public abstract void input(Mouse mouse);
+    public abstract void input(MouseHandler mouse);
 
     public void update() {
         setupWrap();

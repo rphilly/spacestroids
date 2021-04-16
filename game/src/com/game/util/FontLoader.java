@@ -4,7 +4,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
-public class Font {
+public class FontLoader {
 
     private final BufferedImage FONT_SHEET;
     private final int width;
@@ -12,7 +12,7 @@ public class Font {
     private final int letterWidth;
     private final int letterHeight;
 
-    public Font(String file, int width, int height) {
+    public FontLoader(String file, int width, int height) {
         this.width = width;
         this.height = height;
 

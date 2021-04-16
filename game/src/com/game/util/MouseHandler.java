@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-public class Mouse implements MouseListener, MouseMotionListener {
+public class MouseHandler implements MouseListener, MouseMotionListener {
 
     protected int x;
     protected int y;
@@ -18,7 +18,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
 
     private UiManager uiManager;
 
-    public Mouse(Panel panel) {
+    public MouseHandler(Panel panel) {
         panel.addMouseListener(this);
         panel.addMouseMotionListener(this);
     }

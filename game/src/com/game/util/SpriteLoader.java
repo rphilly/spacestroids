@@ -5,15 +5,15 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
-public class Sprite {
+public class SpriteLoader {
 
     private final BufferedImage sprite;
     private final int width;
     private final int height;
 
-    public static Font currentFont;
+    public static FontLoader currentFont;
 
-    public Sprite(String file) {
+    public SpriteLoader(String file) {
         sprite = loadSprite(file);
 
         width = sprite.getWidth();
@@ -43,7 +43,7 @@ public class Sprite {
         return height;
     }
 
-    public static void drawFont(Graphics2D g2d, Font font, String word, Vector2f position, int width, int height, int xOffset, int yOffset) {
+    public static void drawFont(Graphics2D g2d, FontLoader font, String word, Vector2f position, int width, int height, int xOffset, int yOffset) {
         double x = position.x;
         double y = position.y;
 

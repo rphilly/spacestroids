@@ -4,7 +4,7 @@ import com.game.world.entity.Asteroid;
 import com.game.world.entity.Bullet;
 import com.game.world.entity.Entity;
 import com.game.world.entity.Player;
-import com.game.util.Mouse;
+import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
 import com.game.engine.view.Panel;
 
@@ -27,7 +27,7 @@ public class Game extends State {
         setupEntities();
         spawnAsteroids(15);
 
-        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(125, 238),0, this);
+        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(39, 62),0, this);
     }
 
     void setupEntities() {
@@ -54,7 +54,7 @@ public class Game extends State {
     }
 
     @Override
-    public void input(Mouse mouse) {
+    public void input(MouseHandler mouse) {
         player.input(mouse);
 
         attack = mouse.getButton() == 1;

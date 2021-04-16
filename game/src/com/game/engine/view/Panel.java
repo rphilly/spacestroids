@@ -2,7 +2,7 @@ package com.game.engine.view;
 
 import com.game.state.Menu;
 import com.game.state.State;
-import com.game.util.Mouse;
+import com.game.util.MouseHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,7 @@ public class Panel extends JPanel implements Runnable {
     private BufferedImage img;
     private Graphics2D g2d;
 
-    private Mouse mouse;
+    private MouseHandler mouse;
 
     public boolean showFPS = false;
     String fpsString = "";
@@ -65,7 +65,7 @@ public class Panel extends JPanel implements Runnable {
             return;
         }
 
-        mouse = new Mouse(this);
+        mouse = new MouseHandler(this);
 
         State menuState = new Menu(this);
         State.setState(menuState);
@@ -119,7 +119,7 @@ public class Panel extends JPanel implements Runnable {
         }
     }
 
-    public void input(Mouse mouse) {
+    public void input(MouseHandler mouse) {
         //If exists,
         if (State.getState() != null) {
             State.getState().input(mouse);
@@ -150,7 +150,7 @@ public class Panel extends JPanel implements Runnable {
         g.dispose();
     }
 
-    public Mouse getMouseHandler() {
+    public MouseHandler getMouseHandler() {
         return mouse;
     }
 

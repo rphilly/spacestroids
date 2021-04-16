@@ -1,7 +1,7 @@
 package com.game.state;
 
-import com.game.util.Font;
-import com.game.util.Mouse;
+import com.game.util.FontLoader;
+import com.game.util.MouseHandler;
 import com.game.engine.view.Panel;
 
 import java.awt.Graphics2D;
@@ -11,7 +11,7 @@ public abstract class State {
     protected Panel panel;
     private static State currentState = null;
 
-    Font font = new Font("graphics/font/font_sheet.png", 16, 16);
+    FontLoader font = new FontLoader("graphics/font/font_sheet.png", 16, 16);
 
     public State(Panel panel) {
         this.panel = panel;
@@ -25,7 +25,7 @@ public abstract class State {
         currentState = state;
     }
 
-    public abstract void input(Mouse mouse);
+    public abstract void input(MouseHandler mouse);
 
     public abstract void update();
 
