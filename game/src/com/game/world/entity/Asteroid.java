@@ -2,7 +2,6 @@ package com.game.world.entity;
 
 import com.game.state.Game;
 import com.game.util.Mouse;
-import com.game.util.Sprite;
 import com.game.util.Vector2f;
 
 import java.awt.*;
@@ -11,15 +10,17 @@ import java.util.ArrayList;
 
 public class Asteroid extends Entity {
 
-    private final BufferedImage asteroid;
+    //private final BufferedImage asteroid;
 
     public static ArrayList<Asteroid> tempList = new ArrayList<>();
 
-    public Asteroid(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
-        super(position, velocity, size, rotation, instance);
+    double sizeFactor;
 
-        Sprite asteroidSheet = new Sprite("entity/enemy/sprite_sheet.png");
-        asteroid = asteroidSheet.getSprite(3, 0);
+    public Asteroid(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
+        super(position, velocity, size, rotation, "entity/enemy/asteroid.png", instance);
+
+        //asteroid = sprite.getSprite(0, 0);
+        sizeFactor = Math.max(size.x, size.y) / 32;
 
         game.asteroidList.add(this);
     }
@@ -33,6 +34,15 @@ public class Asteroid extends Entity {
                 game.bulletList.get(i).remove();
             }
         }
+    }
+
+    @Override
+    boolean collisionDetection(Entity entity) {
+        double deltaX = (position.x) - (entity.position.x); //Difference between positions
+        double deltaY = (position.y) - (entity.position.y);
+        double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+        return distance < size.x / 2 + Math.max(entity.size.x, entity.size.y) / 2;
     }
 
     @Override
@@ -50,7 +60,7 @@ public class Asteroid extends Entity {
     @Override
     public void render(Graphics2D g2d) {
         super.render(g2d);
-        g2d.drawImage(asteroid, (int) position.x - (int) size.x / 2, (int) position.y - (int) size.y / 2, (int) size.x, (int) size.y, null);
+        g2d.drawImage(sprite.getSprite(), (int) position.x - (int) size.x / 2, (int) position.y - (int) size.y / 2, (int) size.x, (int) size.y, null);
     }
 
     @Override

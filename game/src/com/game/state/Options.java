@@ -49,9 +49,9 @@ public class Options extends State {
     public void render(Graphics2D g2d) {
         uiManager.render(g2d);
 
-        Sprite.drawArray(g2d, font, "OPTIONS", new Vector2f((float) panel.getWidth() / 2 - 84, 100), 48, 48, 22, 0);
-        Sprite.drawArray(g2d, font, "Controls", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
-        Sprite.drawArray(g2d, font, "FPS toggler", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 14, 0);
-        Sprite.drawArray(g2d, font, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
+        Sprite.drawFont(g2d, font, "OPTIONS", new Vector2f((float) panel.getWidth() / 2 - 84, 100), 48, 48, 22, 0);
+        Sprite.drawFont(g2d, font, "Controls", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
+        Sprite.drawFont(g2d, font, "FPS toggler", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 14, 0);
+        Sprite.drawFont(g2d, font, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
     }
 }

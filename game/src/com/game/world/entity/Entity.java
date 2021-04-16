@@ -3,6 +3,7 @@ package com.game.world.entity;
 import com.game.engine.Launcher;
 import com.game.state.Game;
 import com.game.util.Mouse;
+import com.game.util.Sprite;
 import com.game.util.Vector2f;
 
 import java.awt.*;
@@ -14,16 +15,18 @@ public abstract class Entity {
 
     protected Vector2f position, velocity, size;
     protected double rotation;
+    protected Sprite sprite;
     protected Game game;
 
     Rectangle bounds;
     boolean isDrawingBounds;
 
-    public Entity(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
+    public Entity(Vector2f position, Vector2f velocity, Vector2f size, double rotation, String path, Game instance) {
         this.position = position;
         this.velocity = velocity;
         this.size = size;
         this.rotation = rotation;
+        this.sprite = new Sprite(path);
         game = instance;
 
         isDrawingBounds = false;
@@ -35,10 +38,10 @@ public abstract class Entity {
         if (isDrawingBounds) {
             bounds = this.getBounds();
             g2d.setColor(Color.RED);
-            //g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
-            //(int) bounds.getWidth(), (int) bounds.getHeight());
-            g2d.drawOval((int) position.x - ((int) size.x + (int) size.y) / 4, (int) position.y - ((int) size.x + (int) size.y) / 4,
-                    ((int) size.x + (int) size.y) / 2, ((int) size.x + (int) size.y) / 2);
+            g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
+                (int) bounds.getWidth(), (int) bounds.getHeight());
+            //g2d.drawOval((int) position.x - ((int) size.x + (int) size.y) / 4, (int) position.y - ((int) size.x + (int) size.y) / 4,
+                    //((int) size.x + (int) size.y) / 2, ((int) size.x + (int) size.y) / 2);
         }
     }
 
