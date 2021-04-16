@@ -27,7 +27,7 @@ public class Game extends State {
         setupEntities();
         spawnAsteroids(15);
 
-        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(39, 62),0, this);
+        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(125, 238),0, this);
     }
 
     void setupEntities() {

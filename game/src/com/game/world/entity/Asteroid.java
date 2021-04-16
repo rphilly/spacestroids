@@ -5,12 +5,9 @@ import com.game.util.Mouse;
 import com.game.util.Vector2f;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class Asteroid extends Entity {
-
-    //private final BufferedImage asteroid;
 
     public static ArrayList<Asteroid> tempList = new ArrayList<>();
 
@@ -19,7 +16,6 @@ public class Asteroid extends Entity {
     public Asteroid(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
         super(position, velocity, size, rotation, "entity/enemy/asteroid.png", instance);
 
-        //asteroid = sprite.getSprite(0, 0);
         sizeFactor = Math.max(size.x, size.y) / 32;
 
         game.asteroidList.add(this);
@@ -37,7 +33,7 @@ public class Asteroid extends Entity {
     }
 
     @Override
-    boolean collisionDetection(Entity entity) {
+    protected boolean collisionDetection(Entity entity) {
         double deltaX = (position.x) - (entity.position.x); //Difference between positions
         double deltaY = (position.y) - (entity.position.y);
         double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);

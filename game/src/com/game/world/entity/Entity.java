@@ -29,12 +29,12 @@ public abstract class Entity {
         this.sprite = new Sprite(path);
         game = instance;
 
-        isDrawingBounds = false;
+        isDrawingBounds = true;
 
         game.entityList.add(this);
     }
 
-    void drawBounds(Graphics2D g2d) {
+    private void drawBounds(Graphics2D g2d) {
         if (isDrawingBounds) {
             bounds = this.getBounds();
             g2d.setColor(Color.RED);
@@ -45,7 +45,7 @@ public abstract class Entity {
         }
     }
 
-    boolean collisionDetection(Entity entity) {
+    protected boolean collisionDetection(Entity entity) {
         double deltaX = position.x - entity.position.x; //Distance in between objects
         double deltaY = position.y - entity.position.y;
         double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
@@ -53,7 +53,7 @@ public abstract class Entity {
         return distance < (size.x + size.y) / 2 + (entity.size.x + entity.size.y) / 2;
     }
 
-    void setupWrap() {
+    private void setupWrap() {
         if (position.x < -size.x) {
             position.x = WIDTH + size.x;
 

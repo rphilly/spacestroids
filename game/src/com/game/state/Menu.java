@@ -55,7 +55,6 @@ public class Menu extends State {
     public void render(Graphics2D g2d) {
         uiManager.render(g2d);
 
-
         Sprite.drawFont(g2d, font, "SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 192, 100), 64, 64, 30, 0); //230
         g2d.drawRect(panel.getWidth() / 2 - 192 + 16, 100, 360, 64);
         //System.out.println(font.getWidth() + ", h: " + font.getHeight());
