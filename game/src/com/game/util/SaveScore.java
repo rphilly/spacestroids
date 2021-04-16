@@ -9,7 +9,7 @@ public class SaveScore {
 
     private final static String save = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\scores.txt";
 
-    private void write(String score) {
+    public void write(String score) {
         if (Integer.parseInt(score) <= 0) {
             return;
         }
