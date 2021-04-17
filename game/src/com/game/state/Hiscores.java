@@ -1,8 +1,8 @@
 package com.game.state;
 
 import com.game.engine.view.Panel;
-import com.game.ui.UiButton;
-import com.game.ui.UiManager;
+import com.game.state.ui.UiButton;
+import com.game.state.ui.UiManager;
 import com.game.util.MouseHandler;
 import com.game.util.SaveScore;
 import com.game.util.SpriteLoader;
@@ -43,7 +43,7 @@ public class Hiscores extends State {
     public void render(Graphics2D g2d) {
         uiManager.render(g2d);
 
-        SpriteLoader.drawFont(g2d, font, "HISCORES", new Vector2f((float) panel.getWidth() / 2 - 150, 100), 48, 48, 22, 0);
+        SpriteLoader.drawFont(g2d, "HISCORES", new Vector2f((float) panel.getWidth() / 2 - 150, 100), 48, 48, 22, 0);
 
         ArrayList<Integer> scoreList = score.getHiscores();
         g2d.drawString("Score: ", 608, 210);
@@ -52,6 +52,6 @@ public class Hiscores extends State {
             g2d.drawString(i + 1 + ". " + scoreList.get(i), 620, 265 + i * 25);
         }
 
-        SpriteLoader.drawFont(g2d, font, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
+        SpriteLoader.drawFont(g2d, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
     }
 }

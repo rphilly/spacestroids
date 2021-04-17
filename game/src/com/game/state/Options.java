@@ -1,8 +1,8 @@
 package com.game.state;
 
 import com.game.engine.view.Panel;
-import com.game.ui.UiButton;
-import com.game.ui.UiManager;
+import com.game.state.ui.UiButton;
+import com.game.state.ui.UiManager;
 import com.game.util.MouseHandler;
 import com.game.util.SpriteLoader;
 import com.game.util.Vector2f;
@@ -49,9 +49,9 @@ public class Options extends State {
     public void render(Graphics2D g2d) {
         uiManager.render(g2d);
 
-        SpriteLoader.drawFont(g2d, font, "OPTIONS", new Vector2f((float) panel.getWidth() / 2 - 84, 100), 48, 48, 22, 0);
-        SpriteLoader.drawFont(g2d, font, "Controls", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
-        SpriteLoader.drawFont(g2d, font, "FPS toggler", new Vector2f((float) panel.getWidth() / 2 - 78, 335), 32, 32, 14, 0);
-        SpriteLoader.drawFont(g2d, font, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
+        SpriteLoader.drawFont(g2d, "OPTIONS", new Vector2f((float) panel.getWidth() / 2 - 84, 100), 48, 48, 22, 0);
+        SpriteLoader.drawFont(g2d, "Controls", new Vector2f((float) panel.getWidth() / 2 - 41, 270), 32, 32, 14, 0);
+        SpriteLoader.drawFont(g2d, "FPS toggler", new Vector2f((float) panel.getWidth() / 2 - 78, 335), 32, 32, 14, 0);
+        SpriteLoader.drawFont(g2d, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
     }
 }

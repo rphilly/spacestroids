@@ -11,8 +11,6 @@ public abstract class State {
     protected Panel panel;
     private static State currentState = null;
 
-    FontLoader font = new FontLoader("graphics/font/font_sheet.png", 16, 16);
-
     public State(Panel panel) {
         this.panel = panel;
     }

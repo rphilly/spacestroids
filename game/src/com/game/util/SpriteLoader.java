@@ -11,8 +11,6 @@ public class SpriteLoader {
     private final int width;
     private final int height;
 
-    public static FontLoader currentFont;
-
     public SpriteLoader(String file) {
         sprite = loadSprite(file);
 
@@ -43,15 +41,13 @@ public class SpriteLoader {
         return height;
     }
 
-    public static void drawFont(Graphics2D g2d, FontLoader font, String word, Vector2f position, int width, int height, int xOffset, int yOffset) {
+    public static void drawFont(Graphics2D g2d, String word, Vector2f position, int width, int height, int xOffset, int yOffset) {
         double x = position.x;
         double y = position.y;
 
-        currentFont = font;
-
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) != 32)
-                g2d.drawImage(font.getLetter(word.charAt(i)), (int) x, (int) y, width, height, null);
+                g2d.drawImage(FontLoader.FONT.getLetter(word.charAt(i)), (int) x, (int) y, width, height, null);
 
             x += xOffset;
             y += yOffset;

@@ -29,7 +29,7 @@ public class Game extends State {
         setupEntities();
         spawnAsteroids(15);
 
-        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(39, 62),0, this);
+        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(200, 200),0, this);
     }
 
     void setupEntities() {
@@ -45,8 +45,8 @@ public class Game extends State {
             int x = random.nextInt(Entity.WIDTH);
             int y = random.nextInt(Entity.HEIGHT);
 
-            float differenceX = (float) Math.random();
-            float differenceY = (float) Math.random();
+            float differenceX = (float) Math.random() * 2 - 1;
+            float differenceY = (float) Math.random() * 2 - 1;
 
             Vector2f position = new Vector2f(x, y);
             Vector2f velocity = new Vector2f(differenceX, differenceY);
@@ -81,15 +81,14 @@ public class Game extends State {
             asteroid.update();
         }
 
-        asteroidList.removeAll(Asteroid.tempList);
+        Asteroid.tempList.forEach(Asteroid::remove);
         Asteroid.tempList.clear();
 
         for (Bullet bullet : bulletList) {
             bullet.update();
         }
 
-        if (asteroidList.size() == 0)
-        {
+        if (asteroidList.size() == 0) {
             spawnAsteroids(5);
         }
     }
@@ -106,6 +105,6 @@ public class Game extends State {
             bullet.render(g2d);
         }
 
-        SpriteLoader.drawFont(g2d, font, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 36, 36, 22, 0);
+        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 36, 36, 22, 0);
     }
 }

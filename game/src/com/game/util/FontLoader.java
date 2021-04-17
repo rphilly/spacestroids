@@ -4,7 +4,8 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
-public class FontLoader {
+public enum FontLoader {
+    FONT("graphics/font/font_sheet.png", 16, 16);
 
     private final BufferedImage FONT_SHEET;
     private final int width;
@@ -12,7 +13,7 @@ public class FontLoader {
     private final int letterWidth;
     private final int letterHeight;
 
-    public FontLoader(String file, int width, int height) {
+    FontLoader(String file, int width, int height) {
         this.width = width;
         this.height = height;
 
@@ -39,28 +40,7 @@ public class FontLoader {
 
     public BufferedImage getLetter(char letter) {
         if (Character.isDigit(letter)) {
-            switch(letter) {
-                case '0':
-                    return getLetter(0, 6);
-                case '1':
-                    return getLetter(1, 6);
-                case '2':
-                    return getLetter(2, 6);
-                case '3':
-                    return getLetter(3, 6);
-                case '4':
-                    return getLetter(4, 6);
-                case '5':
-                    return getLetter(5, 6);
-                case '6':
-                    return getLetter(6, 6);
-                case '7':
-                    return getLetter(7, 6);
-                case '8':
-                    return getLetter(8, 6);
-                case '9':
-                    return getLetter(9, 6);
-            }
+            return getLetter(letter - 48, 6); //ascii
         } else {
             int value = letter - 65;
             int x = value % letterWidth;
@@ -68,8 +48,6 @@ public class FontLoader {
 
             return getLetter(x, y);
         }
-
-        return null;
     }
 
     public int getLetterWidth() {

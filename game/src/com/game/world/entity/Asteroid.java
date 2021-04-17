@@ -28,8 +28,6 @@ public class Asteroid extends Entity {
             if (collisionDetected) {
                 tempList.add(this);
                 game.bulletList.get(i).remove();
-                killcount++;
-                System.out.println(killcount);
             }
         }
     }
@@ -65,8 +63,9 @@ public class Asteroid extends Entity {
     }
 
     @Override
-    void remove() {
+    public void remove() {
         super.remove();
         game.asteroidList.remove(this);
+        killcount++;
     }
 }

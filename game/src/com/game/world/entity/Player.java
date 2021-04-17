@@ -7,6 +7,8 @@ import com.game.util.Vector2f;
 import javax.swing.Timer;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
 
 public class Player extends Entity {
 
@@ -18,7 +20,7 @@ public class Player extends Entity {
     private int health = 100;
 
     public Player(Vector2f position, Vector2f size, double rotation, Game instance) {
-        super(position, new Vector2f(0, 0), size, rotation, "entity/player/player4-2.png", instance);
+        super(position, new Vector2f(0, 0), size, rotation, "entity/player/playertest1.png", instance);
 
         //Continuously evaluate current mouse & image position
         Timer timer = new Timer(20, e -> {
@@ -67,7 +69,7 @@ public class Player extends Entity {
         }
     }
 
-    @Override
+/*    @Override
     public void render(Graphics2D g2d) {
         super.render(g2d);
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
@@ -80,5 +82,17 @@ public class Player extends Entity {
         g2d.drawImage(sprite.getSprite(), 0, 0, (int) size.x, (int) size.y, null);
         //System.out.println("player W: " + player.getWidth() + ", H: " + player.getHeight()); //39, 62
         g2d.setTransform(oldAT);
+    }*/
+
+    @Override
+    public void render(Graphics2D g2d) {
+        super.render(g2d);
+        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        BufferedImage image = sprite.getSprite();
+        double locationX = image.getWidth() / 2.0;
+        double locationY = image.getHeight() / 2.0;
+        AffineTransform tx = AffineTransform.getRotateInstance(rotation, locationX, locationY);
+        AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
+        g2d.drawImage(op.filter(image, null), (int) (position.x - locationX), (int) (position.y - locationY), null);
     }
 }

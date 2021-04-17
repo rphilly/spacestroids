@@ -1,7 +1,7 @@
 package com.game.util;
 
 import com.game.engine.view.Panel;
-import com.game.ui.UiManager;
+import com.game.state.ui.UiManager;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -49,8 +49,6 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
     public void mousePressed(MouseEvent e) {
         mouseB = e.getButton();
 
-        if (uiManager != null)
-            uiManager.onMouseMove(e);
     }
 
     @Override

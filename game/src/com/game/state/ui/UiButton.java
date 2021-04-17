@@ -1,4 +1,4 @@
-package com.game.ui;
+package com.game.state.ui;
 
 import java.awt.*;
 

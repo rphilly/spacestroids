@@ -29,7 +29,7 @@ public abstract class Entity {
         this.sprite = new SpriteLoader(path);
         game = instance;
 
-        isDrawingBounds = false;
+        isDrawingBounds = true;
 
         game.entityList.add(this);
     }
