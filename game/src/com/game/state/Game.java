@@ -1,5 +1,7 @@
 package com.game.state;
 
+import com.game.util.SaveScore;
+import com.game.util.SpriteLoader;
 import com.game.world.entity.Asteroid;
 import com.game.world.entity.Bullet;
 import com.game.world.entity.Entity;
@@ -53,6 +55,13 @@ public class Game extends State {
         }
     }
 
+    private final SaveScore score = new SaveScore();
+
+    public void playerDeath() {
+        score.write(Integer.toString(Asteroid.killcount));
+        setState(new Hiscores(panel));
+    }
+
     @Override
     public void input(MouseHandler mouse) {
         player.input(mouse);
@@ -96,5 +105,7 @@ public class Game extends State {
         for (Bullet bullet : bulletList) {
             bullet.render(g2d);
         }
+
+        SpriteLoader.drawFont(g2d, font, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 36, 36, 22, 0);
     }
 }

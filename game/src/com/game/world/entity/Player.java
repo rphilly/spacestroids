@@ -15,6 +15,8 @@ public class Player extends Entity {
     int triggerDelay = 15;
     int triggerCooldown = 0;
 
+    private int health = 100;
+
     public Player(Vector2f position, Vector2f size, double rotation, Game instance) {
         super(position, new Vector2f(0, 0), size, rotation, "entity/player/player4-2.png", instance);
 
@@ -59,6 +61,10 @@ public class Player extends Entity {
     public void update() {
         super.update();
         if (triggerCooldown > 0) triggerCooldown--;
+
+        if (health < 1) {
+            game.playerDeath();
+        }
     }
 
     @Override

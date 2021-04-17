@@ -10,10 +10,7 @@ import java.awt.geom.AffineTransform;
 public class Bullet extends Entity {
 
     public Bullet(Vector2f position, Vector2f size, double rotation, Game instance) {
-        super(position, new Vector2f(0, 0), size, rotation - 1.49, "entity/player/bullet_dark_blue.png", instance);
-
-        velocity.x = (float) 7;
-        velocity.y = (float) 7;
+        super(position, new Vector2f(7, 7), size, rotation - 1.49, "entity/player/bullet_dark_blue.png", instance);
     }
 
     @Override

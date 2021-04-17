@@ -11,7 +11,7 @@ public class Asteroid extends Entity {
     public static ArrayList<Asteroid> tempList = new ArrayList<>();
 
     double sizeFactor;
-    static int killcount;
+    public static int killcount;
 
     public Asteroid(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
         super(position, velocity, size, rotation, "entity/enemy/asteroid.png", instance);
@@ -29,6 +29,7 @@ public class Asteroid extends Entity {
                 tempList.add(this);
                 game.bulletList.get(i).remove();
                 killcount++;
+                System.out.println(killcount);
             }
         }
     }
@@ -57,14 +58,10 @@ public class Asteroid extends Entity {
         //score.write(Integer.toString(killcount));
     }
 
-    FontLoader font = new FontLoader("graphics/font/font_sheet.png", 16, 16);
-
     @Override
     public void render(Graphics2D g2d) {
         super.render(g2d);
         g2d.drawImage(sprite.getSprite(), (int) position.x - (int) size.x / 2, (int) position.y - (int) size.y / 2, (int) size.x, (int) size.y, null);
-
-        SpriteLoader.drawFont(g2d, font, Integer.toString(killcount), new Vector2f(22, HEIGHT - 100), 32, 32, 18, 0);
     }
 
     @Override
