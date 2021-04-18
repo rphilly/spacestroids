@@ -24,7 +24,7 @@ public class Hiscores extends State {
         panel.getMouseHandler().setUiManager(uiManager);
 
         //Back
-        uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 456, 140, 45, () -> {
+        uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 520, 140, 45, () -> {
             setState(new Menu(panel));
         }));
     }
@@ -43,15 +43,13 @@ public class Hiscores extends State {
     public void render(Graphics2D g2d) {
         uiManager.render(g2d);
 
-        SpriteLoader.drawFont(g2d, "HISCORES", new Vector2f((float) panel.getWidth() / 2 - 150, 100), 48, 48, 22, 0);
+        SpriteLoader.drawFont(g2d, "HISCORES", new Vector2f((float) panel.getWidth() / 2 - 100, 100), 56, 56, 22, 0);
+        SpriteLoader.drawFont(g2d, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 529), 32, 32, 14, 0);
 
         ArrayList<Integer> scoreList = score.getHiscores();
-        g2d.drawString("Score: ", 608, 210);
-
         for (int i = 0; i < scoreList.size(); i++) {
-            g2d.drawString(i + 1 + ". " + scoreList.get(i), 620, 265 + i * 25);
+            //g2d.drawString(i + 1 + ". " + scoreList.get(i), 620, 265 + i * 25);
+            SpriteLoader.drawFont(g2d, i + 1 + " Ryan TEST " + scoreList.get(i), new Vector2f(580, 225 + i * 25), 26, 26, 14, 0);
         }
-
-        SpriteLoader.drawFont(g2d, "Back", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
     }
 }

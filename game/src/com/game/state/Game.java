@@ -29,7 +29,7 @@ public class Game extends State {
         setupEntities();
         spawnAsteroids(15);
 
-        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(200, 200),0, this);
+        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(100, 100),0, this);
     }
 
     void setupEntities() {
@@ -48,10 +48,15 @@ public class Game extends State {
             float differenceX = (float) Math.random() * 2 - 1;
             float differenceY = (float) Math.random() * 2 - 1;
 
+            int low = 20;
+            int high = 80;
+            int randSize = random.nextInt(high-low) + low;
+
             Vector2f position = new Vector2f(x, y);
             Vector2f velocity = new Vector2f(differenceX, differenceY);
+            Vector2f size = new Vector2f(randSize, randSize);
 
-            new Asteroid(position, velocity, new Vector2f(64, 64), 0,this);
+            new Asteroid(position, velocity, size, 0,this);
         }
     }
 

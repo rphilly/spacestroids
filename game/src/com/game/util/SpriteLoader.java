@@ -29,18 +29,6 @@ public class SpriteLoader {
         return i;
     }
 
-    public BufferedImage getSprite() {
-        return sprite;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
     public static void drawFont(Graphics2D g2d, String word, Vector2f position, int width, int height, int xOffset, int yOffset) {
         double x = position.x;
         double y = position.y;
@@ -52,5 +40,17 @@ public class SpriteLoader {
             x += xOffset;
             y += yOffset;
         }
+    }
+
+    public BufferedImage getSprite() {
+        return sprite;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }

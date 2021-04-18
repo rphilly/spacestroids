@@ -37,7 +37,7 @@ public class Menu extends State {
         }));
 
         //Exit
-        uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 456, 140, 45, () -> {
+        uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 520, 140, 45, () -> { //456
             System.exit(0);
         }));
     }
@@ -56,7 +56,7 @@ public class Menu extends State {
     public void render(Graphics2D g2d) {
         uiManager.render(g2d);
 
-        SpriteLoader.drawFont(g2d,"SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 192, 100), 64, 64, 30, 0); //230
+        SpriteLoader.drawFont(g2d,"SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2 - 192, 100), 70, 70, 30, 0); //230
         //g2d.drawRect(panel.getWidth() / 2 - 208, 100, 360, 64);
         //System.out.println(font.getWidth() + ", h: " + font.getHeight());
 
@@ -65,7 +65,7 @@ public class Menu extends State {
 
         SpriteLoader.drawFont(g2d,"Hiscores", new Vector2f((float) panel.getWidth() / 2 - 70, 335), 32, 32, 14, 0);
         SpriteLoader.drawFont(g2d,"Options", new Vector2f((float) panel.getWidth() / 2 - 60, 400), 32, 32, 14, 0);
-        SpriteLoader.drawFont(g2d,"Exit", new Vector2f((float) panel.getWidth() / 2 - 41, 465), 32, 32, 14, 0);
+        SpriteLoader.drawFont(g2d,"Exit", new Vector2f((float) panel.getWidth() / 2 - 41, 529), 32, 32, 14, 0);
 
         //g2d.setColor(Color.GREEN);
         //g2d.drawLine(panel.getWidth() / 2, panel.getHeight(), panel.getWidth() / 2, 0);

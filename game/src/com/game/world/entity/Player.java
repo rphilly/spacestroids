@@ -20,23 +20,11 @@ public class Player extends Entity {
     private int health = 100;
 
     public Player(Vector2f position, Vector2f size, double rotation, Game instance) {
-        super(position, new Vector2f(0, 0), size, rotation, "entity/player/playertest1.png", instance);
+        super(position, new Vector2f(0, 0), size, rotation, "entity/player/playertest2.png", instance);
 
         //Continuously evaluate current mouse & image position
         Timer timer = new Timer(20, e -> {
-            if (pointer != null) {
 
-                int centerX = (int) position.x + (sprite.getSprite().getWidth());
-                int centerY = (int) position.y + (sprite.getSprite().getHeight());
-
-                if (pointer.x != centerX) {
-                    position.x += pointer.x < centerX ? -1 : 1;
-                }
-                if (pointer.y != centerY) {
-                    position.y += pointer.y < centerY ? -1 : 1;
-                }
-                //repaint();
-            }
         });
 
         timer.start();
@@ -66,6 +54,20 @@ public class Player extends Entity {
 
         if (health < 1) {
             game.playerDeath();
+        }
+
+        if (pointer != null) {
+
+            int centerX = (int) position.x + (sprite.getSprite().getWidth() / 2);
+            int centerY = (int) position.y + (sprite.getSprite().getHeight() / 2);
+
+            if (pointer.x != centerX) {
+                position.x += pointer.x < centerX ? -1 : 1;
+            }
+            if (pointer.y != centerY) {
+                position.y += pointer.y < centerY ? -1 : 1;
+            }
+            //repaint();
         }
     }
 

@@ -29,20 +29,9 @@ public abstract class Entity {
         this.sprite = new SpriteLoader(path);
         game = instance;
 
-        isDrawingBounds = true;
+        isDrawingBounds = false;
 
         game.entityList.add(this);
-    }
-
-    private void drawBounds(Graphics2D g2d) {
-        if (isDrawingBounds) {
-            bounds = this.getBounds();
-            g2d.setColor(Color.RED);
-            g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
-                (int) bounds.getWidth(), (int) bounds.getHeight());
-            //g2d.drawOval((int) position.x - ((int) size.x + (int) size.y) / 4, (int) position.y - ((int) size.x + (int) size.y) / 4,
-                    //((int) size.x + (int) size.y) / 2, ((int) size.x + (int) size.y) / 2);
-        }
     }
 
     protected boolean collisionDetection(Entity entity) {
@@ -70,6 +59,17 @@ public abstract class Entity {
         //bottom
         } else if (position.y > HEIGHT + size.y) {
             position.y = -size.y;
+        }
+    }
+
+    private void drawBounds(Graphics2D g2d) {
+        if (isDrawingBounds) {
+            bounds = this.getBounds();
+            g2d.setColor(Color.RED);
+            g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
+                    (int) bounds.getWidth(), (int) bounds.getHeight());
+            //g2d.drawOval((int) position.x - ((int) size.x + (int) size.y) / 4, (int) position.y - ((int) size.x + (int) size.y) / 4,
+            //((int) size.x + (int) size.y) / 2, ((int) size.x + (int) size.y) / 2);
         }
     }
 
