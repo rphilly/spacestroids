@@ -1,6 +1,6 @@
 package com.game.state;
 
-import com.game.util.FontLoader;
+import com.game.state.ui.UiManager;
 import com.game.util.MouseHandler;
 import com.game.engine.view.Panel;
 
@@ -11,8 +11,11 @@ public abstract class State {
     protected Panel panel;
     private static State currentState = null;
 
+    protected UiManager uiManager;
+
     public State(Panel panel) {
         this.panel = panel;
+        this.uiManager = new UiManager();
     }
 
     public static State getState() {

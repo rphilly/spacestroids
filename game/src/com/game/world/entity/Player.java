@@ -43,8 +43,7 @@ public class Player extends Entity {
         pointer = e.getPointer();
         double x = e.getX() - position.x;
         double y = e.getY() - position.y;
-        rotation = Math.atan2(y, x) + 1.49;
-        //repaint();
+        rotation = Math.atan2(y, x) + Math.PI / 2;
     }
 
     @Override
@@ -67,34 +66,6 @@ public class Player extends Entity {
             if (pointer.y != centerY) {
                 position.y += pointer.y < centerY ? -1 : 1;
             }
-            //repaint();
         }
-    }
-
-/*    @Override
-    public void render(Graphics2D g2d) {
-        super.render(g2d);
-        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-        int centerX = sprite.getSprite().getWidth() / 2;
-        int centerY = sprite.getSprite().getHeight() / 2;
-        AffineTransform oldAT = g2d.getTransform();
-        g2d.translate(centerX + position.x, centerY + position.y);
-        g2d.rotate(rotation);
-        g2d.translate(-centerX, -centerY);
-        g2d.drawImage(sprite.getSprite(), 0, 0, (int) size.x, (int) size.y, null);
-        //System.out.println("player W: " + player.getWidth() + ", H: " + player.getHeight()); //39, 62
-        g2d.setTransform(oldAT);
-    }*/
-
-    @Override
-    public void render(Graphics2D g2d) {
-        super.render(g2d);
-        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-        BufferedImage image = sprite.getSprite();
-        double locationX = image.getWidth() / 2.0;
-        double locationY = image.getHeight() / 2.0;
-        AffineTransform tx = AffineTransform.getRotateInstance(rotation, locationX, locationY);
-        AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
-        g2d.drawImage(op.filter(image, null), (int) (position.x - locationX), (int) (position.y - locationY), null);
     }
 }

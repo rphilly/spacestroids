@@ -2,11 +2,7 @@ package com.game.engine.view;
 
 import com.game.state.Menu;
 import com.game.state.State;
-import com.game.util.FontLoader;
 import com.game.util.MouseHandler;
-import com.game.util.SpriteLoader;
-import com.game.util.Vector2f;
-import com.game.world.entity.Asteroid;
 
 import javax.swing.*;
 import java.awt.*;

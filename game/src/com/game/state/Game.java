@@ -56,7 +56,7 @@ public class Game extends State {
             Vector2f velocity = new Vector2f(differenceX, differenceY);
             Vector2f size = new Vector2f(randSize, randSize);
 
-            new Asteroid(position, velocity, size, 0,this);
+            new Asteroid(position, velocity, size, Math.random() * 2 * Math.PI,this);
         }
     }
 
@@ -110,6 +110,6 @@ public class Game extends State {
             bullet.render(g2d);
         }
 
-        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 36, 36, 22, 0);
+        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f,22, 0);
     }
 }

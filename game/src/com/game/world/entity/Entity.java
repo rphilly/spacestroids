@@ -7,6 +7,9 @@ import com.game.util.SpriteLoader;
 import com.game.util.Vector2f;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
 
 public abstract class Entity {
 
@@ -32,6 +35,21 @@ public abstract class Entity {
         isDrawingBounds = false;
 
         game.entityList.add(this);
+    }
+
+    public abstract void input(MouseHandler mouse);
+
+    public void update() {
+        setupWrap();
+    }
+
+    public void render(Graphics2D g2d) {
+        BufferedImage image = sprite.getSprite();
+        double locationX = image.getWidth() / 2.0;
+        double locationY = image.getHeight() / 2.0;
+        AffineTransform tx = AffineTransform.getRotateInstance(rotation, locationX, locationY);
+        AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
+        g2d.drawImage(op.filter(image, null), (int) (position.x - locationX), (int) (position.y - locationY), null);
     }
 
     protected boolean collisionDetection(Entity entity) {
@@ -71,16 +89,6 @@ public abstract class Entity {
             //g2d.drawOval((int) position.x - ((int) size.x + (int) size.y) / 4, (int) position.y - ((int) size.x + (int) size.y) / 4,
             //((int) size.x + (int) size.y) / 2, ((int) size.x + (int) size.y) / 2);
         }
-    }
-
-    public abstract void input(MouseHandler mouse);
-
-    public void update() {
-        setupWrap();
-    }
-
-    public void render(Graphics2D g2d) {
-        drawBounds(g2d);
     }
 
     void remove() {

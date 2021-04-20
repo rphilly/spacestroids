@@ -1,8 +1,6 @@
 package com.game.util;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.util.Objects;
 
 public enum FontLoader {
     FONT("graphics/font/font_sheet.png", 16, 16);
@@ -17,21 +15,10 @@ public enum FontLoader {
         this.width = width;
         this.height = height;
 
-        FONT_SHEET = loadFont(file);
+        FONT_SHEET = ImageLoader.load(file);
 
         letterWidth = FONT_SHEET.getWidth() / width;
         letterHeight = FONT_SHEET.getHeight() / height;
-    }
-
-    private BufferedImage loadFont(String file) {
-        BufferedImage i = null;
-        try {
-            i = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResource(file)));
-        } catch (Exception e) {
-            System.out.println("Error: font " + file + " failed to load..." + e);
-        }
-
-        return i;
     }
 
     public BufferedImage getLetter(int x, int y) {

@@ -2,6 +2,8 @@ package com.game.engine;
 
 import com.game.engine.view.Frame;
 
+/** Launcher to intialise the application **/
+
 public class Launcher {
 
     private final Frame frame;
