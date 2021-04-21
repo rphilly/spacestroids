@@ -2,10 +2,10 @@ package com.game.state;
 
 import com.game.util.SaveScore;
 import com.game.util.SpriteLoader;
-import com.game.world.entity.Asteroid;
-import com.game.world.entity.Bullet;
-import com.game.world.entity.Entity;
-import com.game.world.entity.Player;
+import com.game.entity.Asteroid;
+import com.game.entity.Bullet;
+import com.game.entity.Entity;
+import com.game.entity.Player;
 import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
 import com.game.engine.view.Panel;
@@ -26,19 +26,19 @@ public class Game extends State {
 
     public Game(Panel panel) {
         super(panel);
-        setupEntities();
-        spawnAsteroids(15);
+        initialiseEntities();
+        setupAsteroids(15);
 
         player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(100, 100),0, this);
     }
 
-    void setupEntities() {
+    void initialiseEntities() {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
     }
 
-    void spawnAsteroids(int amount) {
+    void setupAsteroids(int amount) {
         Random random = new Random();
 
         for (int i = 0; i < amount; i++) {
@@ -93,8 +93,8 @@ public class Game extends State {
             bullet.update();
         }
 
-        if (asteroidList.size() == 0) {
-            spawnAsteroids(5);
+        if (asteroidList.size() == 0) { //Temp
+            setupAsteroids(5);
         }
     }
 

@@ -1,4 +1,4 @@
-package com.game.world.entity;
+package com.game.entity;
 
 import com.game.state.Game;
 import com.game.util.MouseHandler;
@@ -6,16 +6,13 @@ import com.game.util.Vector2f;
 
 import javax.swing.Timer;
 import java.awt.*;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
 
 public class Player extends Entity {
 
     private Point pointer;
 
     int triggerDelay = 15;
-    int triggerCooldown = 0;
+    int triggerCd = 0;
 
     private int health = 100;
 
@@ -24,17 +21,16 @@ public class Player extends Entity {
 
         //Continuously evaluate current mouse & image position
         Timer timer = new Timer(20, e -> {
-
         });
 
         timer.start();
     }
 
     public void shoot() {
-        if (triggerCooldown == 0) {
+        if (triggerCd == 0) {
             game.bulletList.add(new Bullet(new Vector2f(position.x, position.y), new Vector2f(10, 20), rotation, game));
             game.attack = false;
-            triggerCooldown = triggerDelay;
+            triggerCd = triggerDelay;
         }
     }
 
@@ -49,14 +45,13 @@ public class Player extends Entity {
     @Override
     public void update() {
         super.update();
-        if (triggerCooldown > 0) triggerCooldown--;
+        if (triggerCd > 0) triggerCd--;
 
         if (health < 1) {
             game.playerDeath();
         }
 
         if (pointer != null) {
-
             int centerX = (int) position.x + (sprite.getSprite().getWidth() / 2);
             int centerY = (int) position.y + (sprite.getSprite().getHeight() / 2);
 

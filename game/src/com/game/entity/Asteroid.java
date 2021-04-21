@@ -1,4 +1,4 @@
-package com.game.world.entity;
+package com.game.entity;
 
 import com.game.state.Game;
 import com.game.util.*;
@@ -10,9 +10,8 @@ import java.util.ArrayList;
 public class Asteroid extends Entity {
 
     public static ArrayList<Asteroid> tempList = new ArrayList<>();
-
-    double sizeFactor;
     public static int killcount;
+    SpriteLoader sl;
 
     static final int EXPLOSION_WIDTH = 128;
     static final int EXPLOSION_HEIGHT = 128;
@@ -20,16 +19,11 @@ public class Asteroid extends Entity {
     boolean exploding, destroyed = false;
     static int explosionStep = 0;
 
-    SpriteLoader sl;
-
     public Asteroid(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
         super(position, velocity, size, rotation, "entity/enemy/asteroid.png", instance);
-
-        sizeFactor = Math.max(size.x, size.y) / 32;
+        game.asteroidList.add(this);
 
         sl = new SpriteLoader("entity/enemy/explosion.png");
-
-        game.asteroidList.add(this);
     }
 
     public void checkBulletCollision() {
@@ -53,10 +47,13 @@ public class Asteroid extends Entity {
         return distance < size.x / 2 + Math.min(entity.size.x, entity.size.y) / 2;
     }
 
-    @Override
-    public void input(MouseHandler mouse) {
-
+    public void explode() {
+        exploding = true;
+        explosionStep = -1;
     }
+
+    @Override
+    public void input(MouseHandler mouse) { }
 
     @Override
     public void update() {
@@ -64,10 +61,10 @@ public class Asteroid extends Entity {
         position.x += velocity.x;
         position.y += velocity.y;
 
+        this.rotation += 0.01;
+
         if (exploding) explosionStep++;
         destroyed = explosionStep > EXPLOSION_STEPS;
-
-        this.rotation += 0.01;
 
         //SaveScore score = new SaveScore();
         //score.write(Integer.toString(killcount));
@@ -76,7 +73,6 @@ public class Asteroid extends Entity {
     @Override
     public void render(Graphics2D g2d) {
         super.render(g2d);
-
         if (exploding) {
             BufferedImage explosion = sl.getSprite().getSubimage(0, 0, 128, 128);
             g2d.drawImage(explosion,
@@ -86,11 +82,6 @@ public class Asteroid extends Entity {
                     EXPLOSION_HEIGHT,
                     null);
         }
-    }
-
-    public void explode() {
-        exploding = true;
-        explosionStep = -1;
     }
 
     @Override

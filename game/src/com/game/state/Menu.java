@@ -2,7 +2,6 @@ package com.game.state;
 
 import com.game.util.MouseHandler;
 import com.game.state.ui.UiButton;
-import com.game.state.ui.UiManager;
 import com.game.engine.view.Panel;
 import com.game.util.SpriteLoader;
 import com.game.util.Vector2f;
@@ -52,18 +51,10 @@ public class Menu extends State {
     public void render(Graphics2D g2d) {
         uiManager.render(g2d);
 
-        SpriteLoader.drawFont(g2d,"SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2, 100), 1, 30, 0); //230
-        //g2d.drawRect(panel.getWidth() / 2 - 208, 100, 360, 64);
-        //System.out.println(font.getWidth() + ", h: " + font.getHeight());
-
+        SpriteLoader.drawFont(g2d,"SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2, 100), 1, 30, 0);
         SpriteLoader.drawFont(g2d,"Play", new Vector2f((float) panel.getWidth() / 2, 270), 0.5f, 14, 0);
-        //g2d.drawRect(panel.getWidth() / 2 - 41, 270, 56, 32);
-
         SpriteLoader.drawFont(g2d,"Hiscores", new Vector2f((float) panel.getWidth() / 2, 335),0.5f,14, 0);
         SpriteLoader.drawFont(g2d,"Options", new Vector2f((float) panel.getWidth() / 2, 400), 0.5f,14, 0);
         SpriteLoader.drawFont(g2d,"Exit", new Vector2f((float) panel.getWidth() / 2, 529), 0.5f,14, 0);
-
-        g2d.setColor(Color.GREEN);
-        g2d.drawLine(panel.getWidth() / 2, panel.getHeight(), panel.getWidth() / 2, 0);
     }
 }

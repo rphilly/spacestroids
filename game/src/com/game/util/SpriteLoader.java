@@ -22,8 +22,12 @@ public class SpriteLoader {
 
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) != 32)
-                g2d.drawImage(FontLoader.FONT.getLetter(word.charAt(i)), (int) (x - 16 * word.length() * sizeFactor), (int) y,
-                        (int) (sizeFactor * 64), (int) (sizeFactor * 64), null);
+                g2d.drawImage(FontLoader.FONT.getLetter(word.charAt(i)),
+                        (int) (x - 16 * word.length() * sizeFactor),
+                        (int) y,
+                        (int) (sizeFactor * 64),
+                        (int) (sizeFactor * 64),
+                        null);
 
             x += xOffset;
             y += yOffset;

@@ -1,4 +1,4 @@
-package com.game.world.entity;
+package com.game.entity;
 
 import com.game.engine.Launcher;
 import com.game.state.Game;
