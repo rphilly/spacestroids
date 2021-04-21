@@ -8,7 +8,7 @@ import java.awt.Graphics2D;
 
 public abstract class State {
 
-    protected Panel panel;
+    public Panel panel;
     protected UiManager uiManager;
     private static State currentState = null;
 

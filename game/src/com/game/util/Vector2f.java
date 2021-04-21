@@ -22,6 +22,10 @@ public class Vector2f {
         this.y = y;
     }
 
+    public static Vector2f zero() {
+        return new Vector2f(0, 0);
+    }
+
     public void setX(float f) {
         x = f;
     }

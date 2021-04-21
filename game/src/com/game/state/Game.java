@@ -1,11 +1,8 @@
 package com.game.state;
 
+import com.game.entity.*;
 import com.game.util.SaveScore;
 import com.game.util.SpriteLoader;
-import com.game.entity.Asteroid;
-import com.game.entity.Bullet;
-import com.game.entity.Entity;
-import com.game.entity.Player;
 import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
 import com.game.engine.view.Panel;
@@ -23,33 +20,43 @@ public class Game extends State {
     public ArrayList<Bullet> bulletList;
 
     public boolean attack;
+    private int round = 1;
 
     public Game(Panel panel) {
         super(panel);
         initialiseEntities();
-        setupAsteroids(15);
 
         player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(100, 100),0, this);
+
+        setupAsteroids(15);
     }
 
-    void initialiseEntities() {
+    private void initialiseEntities() {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
     }
 
-    void setupAsteroids(int amount) {
+    private void setupAsteroids(int amount) {
         Random random = new Random();
+        int low = 35;
+        int high = 80;
 
         for (int i = 0; i < amount; i++) {
             int x = random.nextInt(Entity.WIDTH);
             int y = random.nextInt(Entity.HEIGHT);
 
-            float differenceX = (float) Math.random() * 2 - 1;
-            float differenceY = (float) Math.random() * 2 - 1;
+            while (Math.abs(x - player.getPosition().x) < high + player.getSize().x) {
+                x = random.nextInt(Entity.WIDTH);
+            }
 
-            int low = 20;
-            int high = 80;
+            while (Math.abs(y - player.getPosition().y) < high + player.getSize().y) {
+                y = random.nextInt(Entity.HEIGHT);
+            }
+
+            float differenceX = (float) ((Math.random() * 2 - 1) * Math.sqrt(round));
+            float differenceY = (float) ((Math.random() * 2 - 1) * Math.sqrt(round));
+
             int randSize = random.nextInt(high-low) + low;
 
             Vector2f position = new Vector2f(x, y);
@@ -60,11 +67,18 @@ public class Game extends State {
         }
     }
 
-    private final SaveScore score = new SaveScore();
+    public void setupScore() {
+        new Thread(()->{
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
-    public void playerDeath() {
-        score.write(Integer.toString(Asteroid.killcount));
-        setState(new Hiscores(panel));
+            SaveScore score = new SaveScore();
+            score.write(Integer.toString(Asteroid.killcount));
+            setState(new Hiscores(panel));
+        }).start();
     }
 
     @Override
@@ -80,36 +94,36 @@ public class Game extends State {
     @Override
     public void update() {
         player.update();
+        player.checkCollision();
 
         for (Asteroid asteroid : asteroidList) {
             asteroid.checkBulletCollision();
             asteroid.update();
         }
 
-        Asteroid.tempList.forEach(Asteroid::remove);
-        Asteroid.tempList.clear();
-
         for (Bullet bullet : bulletList) {
             bullet.update();
         }
 
+        Asteroid.tempList.forEach(Asteroid::remove);
+        Asteroid.tempList.clear();
+
+        Explosion.tempList.forEach(Entity::remove);
+        Explosion.tempList.clear();
+
         if (asteroidList.size() == 0) { //Temp
+            round++;
             setupAsteroids(5);
         }
     }
 
     @Override
     public void render(Graphics2D g2d) {
-        player.render(g2d);
-
-        for (Asteroid asteroid : asteroidList) {
-            asteroid.render(g2d);
+        for (Entity entity : entityList) {
+            entity.render(g2d);
         }
 
-        for (Bullet bullet : bulletList) {
-            bullet.render(g2d);
-        }
-
-        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f,22, 0);
+        SpriteLoader.drawFont(g2d, Integer.toString(round), new Vector2f((float) panel.getWidth() / 2, 30), 0.75f,26, 0);
+        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f,18, 0);
     }
 }

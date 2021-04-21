@@ -45,19 +45,22 @@ public abstract class Entity {
 
     public void render(Graphics2D g2d) {
         BufferedImage image = sprite.getSprite();
+        AffineTransform tx = AffineTransform.getScaleInstance(size.x / image.getWidth(), size.y / image.getHeight());
+        AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
+        image = op.filter(image, null);
         double locationX = image.getWidth() / 2.0;
         double locationY = image.getHeight() / 2.0;
-        AffineTransform tx = AffineTransform.getRotateInstance(rotation, locationX, locationY);
-        AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
-        g2d.drawImage(op.filter(image, null), (int) (position.x - locationX), (int) (position.y - locationY), null);
+        AffineTransform tx2 = AffineTransform.getRotateInstance(rotation, locationX, locationY);
+        AffineTransformOp op2 = new AffineTransformOp(tx2, AffineTransformOp.TYPE_BILINEAR);
+        g2d.drawImage(op2.filter(image, null), (int) (position.x - locationX), (int) (position.y - locationY), null);
     }
 
     protected boolean collisionDetection(Entity entity) {
-        double deltaX = position.x - entity.position.x; //Distance in between objects
-        double deltaY = position.y - entity.position.y;
+        double deltaX = (position.x) - (entity.position.x); //Difference between positions
+        double deltaY = (position.y) - (entity.position.y);
         double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-        return distance < (size.x + size.y) / 2 + (entity.size.x + entity.size.y) / 2;
+        return distance < size.x / 2 + Math.min(entity.size.x, entity.size.y) / 2;
     }
 
     private void setupWrap() {
@@ -86,12 +89,10 @@ public abstract class Entity {
             g2d.setColor(Color.RED);
             g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
                     (int) bounds.getWidth(), (int) bounds.getHeight());
-            //g2d.drawOval((int) position.x - ((int) size.x + (int) size.y) / 4, (int) position.y - ((int) size.x + (int) size.y) / 4,
-            //((int) size.x + (int) size.y) / 2, ((int) size.x + (int) size.y) / 2);
         }
     }
 
-    void remove() {
+    public void remove() {
         game.entityList.remove(this);
     }
 
@@ -105,5 +106,13 @@ public abstract class Entity {
 
     public Rectangle getBounds() {
         return new Rectangle((int) position.x, (int) position.y, (int) size.x, (int) size.y);
+    }
+
+    public Vector2f getPosition() {
+        return position;
+    }
+
+    public Game getGame() {
+        return game;
     }
 }

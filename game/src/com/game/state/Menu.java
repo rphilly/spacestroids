@@ -38,9 +38,7 @@ public class Menu extends State {
     }
 
     @Override
-    public void input(MouseHandler mouse) {
-
-    }
+    public void input(MouseHandler mouse) { }
 
     @Override
     public void update() {

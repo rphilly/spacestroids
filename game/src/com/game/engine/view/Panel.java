@@ -14,7 +14,7 @@ public class Panel extends JPanel implements Runnable {
     private final int height;
 
     private Thread thread;
-    private boolean isRunning = false;
+    public boolean isRunning = false;
 
     private BufferedImage img;
     private Graphics2D g2d;
@@ -120,7 +120,6 @@ public class Panel extends JPanel implements Runnable {
     }
 
     public void input(MouseHandler mouse) {
-        //If exists,
         if (State.getState() != null) {
             State.getState().input(mouse);
         }
