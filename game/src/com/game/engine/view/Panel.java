@@ -1,5 +1,6 @@
 package com.game.engine.view;
 
+import com.game.state.Game;
 import com.game.state.Menu;
 import com.game.state.State;
 import com.game.util.MouseHandler;

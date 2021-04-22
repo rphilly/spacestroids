@@ -10,10 +10,8 @@ import java.util.ArrayList;
 
 public class Explosion extends Entity implements Runnable {
 
-    final int EXPLOSION_WIDTH = 128;
-    final int EXPLOSION_HEIGHT = 128;
+    final int EXPLOSION_SIZE = 128;
     final int EXPLOSION_STEPS = 15;
-    boolean exploding, destroyed = false;
     int explosionStep = 0;
 
     public static ArrayList<Explosion> tempList = new ArrayList<>();
@@ -30,7 +28,7 @@ public class Explosion extends Entity implements Runnable {
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Error: explosion failed..." + e);
             }
 
             explosionStep++;
@@ -40,19 +38,22 @@ public class Explosion extends Entity implements Runnable {
     }
 
     @Override
-    public void input(MouseHandler mouse) { }
+    public void input(MouseHandler mouse) {
+    }
 
     @Override
-    public void update() { }
+    public void update() {
+    }
 
     @Override
     public void render(Graphics2D g2d) {
-        BufferedImage explosion = sprite.getSprite().getSubimage((explosionStep % 4) * 128, (explosionStep / 4) * 128, 128, 128);
+        BufferedImage explosion =
+                sprite.getSprite().getSubimage((explosionStep % 4) * EXPLOSION_SIZE, (explosionStep / 4) * EXPLOSION_SIZE, 128, 128);
         g2d.drawImage(explosion,
                 (int) (position.x - explosion.getWidth() / 2),
                 (int) (position.y - explosion.getHeight() / 2),
-                EXPLOSION_WIDTH,
-                EXPLOSION_HEIGHT,
+                EXPLOSION_SIZE,
+                EXPLOSION_SIZE,
                 null);
     }
 }

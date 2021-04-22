@@ -12,22 +12,8 @@ public class Asteroid extends Entity {
 
     public Asteroid(Vector2f position, Vector2f velocity, Vector2f size, double rotation, Game instance) {
         super(position, velocity, size, rotation, "entity/enemy/asteroid.png", instance);
+
         game.asteroidList.add(this);
-    }
-
-    @Override
-    public void input(MouseHandler mouse) { }
-
-    @Override
-    public void update() {
-        super.update();
-        position.x += velocity.x;
-        position.y += velocity.y;
-
-        this.rotation += 0.01;
-
-        SaveScore score = new SaveScore();
-        score.write(Integer.toString(killcount));
     }
 
     public void checkBulletCollision() {
@@ -42,10 +28,45 @@ public class Asteroid extends Entity {
         }
     }
 
+    private void setupWrap() {
+        if (position.x < -size.x) {
+            position.x = game.panel.getWidth() + size.x;
+        } else if (position.x > game.panel.getWidth() + size.x) {
+            position.x = -size.x;
+        }
+
+        if (position.y < -size.y) {
+            position.y = game.panel.getHeight() + size.y;
+        } else if (position.y > game.panel.getHeight() + size.y) {
+            position.y = -size.y;
+        }
+    }
+
+    @Override
+    public void input(MouseHandler mouse) {
+    }
+
+    @Override
+    public void update() {
+        position.x += velocity.x;
+        position.y += velocity.y;
+
+        this.rotation += 0.01;
+
+        setupWrap();
+    }
+
     @Override
     public void remove() {
         super.remove();
         game.asteroidList.remove(this);
+
         killcount++;
+        SaveScore score = new SaveScore();
+        score.write(Integer.toString(killcount));
+    }
+
+    public static void setKillcount(int killcount) {
+        Asteroid.killcount = killcount;
     }
 }

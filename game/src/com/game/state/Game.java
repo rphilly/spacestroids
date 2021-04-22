@@ -13,22 +13,22 @@ import java.util.Random;
 
 public class Game extends State {
 
-    private final Player player;
-
     public ArrayList<Entity> entityList;
     public ArrayList<Asteroid> asteroidList;
     public ArrayList<Bullet> bulletList;
+    private final Player player;
 
-    public boolean attack;
     private int round = 1;
+    public boolean attack;
 
     public Game(Panel panel) {
         super(panel);
         initialiseEntities();
-
-        player = new Player(new Vector2f((float) Entity.WIDTH / 2, (float) Entity.HEIGHT / 2), new Vector2f(100, 100),0, this);
+        player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2),
+                            new Vector2f(100, 100), 0, this);
 
         setupAsteroids(15);
+        Asteroid.setKillcount(0); //???
     }
 
     private void initialiseEntities() {
@@ -43,41 +43,42 @@ public class Game extends State {
         int high = 80;
 
         for (int i = 0; i < amount; i++) {
-            int x = random.nextInt(Entity.WIDTH);
-            int y = random.nextInt(Entity.HEIGHT);
+            int x = random.nextInt(panel.getWidth());
+            int y = random.nextInt(panel.getHeight());
 
             while (Math.abs(x - player.getPosition().x) < high + player.getSize().x) {
-                x = random.nextInt(Entity.WIDTH);
+                x = random.nextInt(panel.getWidth());
             }
 
             while (Math.abs(y - player.getPosition().y) < high + player.getSize().y) {
-                y = random.nextInt(Entity.HEIGHT);
+                y = random.nextInt(panel.getHeight());
             }
 
             float differenceX = (float) ((Math.random() * 2 - 1) * Math.sqrt(round));
             float differenceY = (float) ((Math.random() * 2 - 1) * Math.sqrt(round));
 
-            int randSize = random.nextInt(high-low) + low;
+            int randSize = random.nextInt(high - low) + low;
 
             Vector2f position = new Vector2f(x, y);
             Vector2f velocity = new Vector2f(differenceX, differenceY);
             Vector2f size = new Vector2f(randSize, randSize);
 
-            new Asteroid(position, velocity, size, Math.random() * 2 * Math.PI,this);
+            new Asteroid(position, velocity, size, Math.random() * 2 * Math.PI, this);
         }
     }
 
     public void setupScore() {
-        new Thread(()->{
+        new Thread(() -> {
             try {
                 Thread.sleep(1500);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Error: hiscores failed to load..." + e);
             }
 
             SaveScore score = new SaveScore();
             score.write(Integer.toString(Asteroid.killcount));
             setState(new Hiscores(panel));
+
         }).start();
     }
 
@@ -94,7 +95,7 @@ public class Game extends State {
     @Override
     public void update() {
         player.update();
-        player.checkCollision();
+        player.checkAsteroidCollision();
 
         for (Asteroid asteroid : asteroidList) {
             asteroid.checkBulletCollision();
@@ -111,7 +112,7 @@ public class Game extends State {
         Explosion.tempList.forEach(Entity::remove);
         Explosion.tempList.clear();
 
-        if (asteroidList.size() == 0) { //Temp
+        if (asteroidList.isEmpty()) {
             round++;
             setupAsteroids(5);
         }
@@ -123,7 +124,7 @@ public class Game extends State {
             entity.render(g2d);
         }
 
-        SpriteLoader.drawFont(g2d, Integer.toString(round), new Vector2f((float) panel.getWidth() / 2, 30), 0.75f,26, 0);
-        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f,18, 0);
+        SpriteLoader.drawFont(g2d, Integer.toString(round), new Vector2f((float) panel.getWidth() / 2, 30), 0.75f, 26, 0);
+        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f, 18, 0);
     }
 }

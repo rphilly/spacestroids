@@ -39,7 +39,7 @@ public class SaveScore {
                 scores.add(Integer.parseInt(str));
             }
         } catch (Exception e) {
-            //System.out.println("Error: failed to read file " + e);
+            System.out.println("Error: failed to read file " + e);
         }
         scores.sort(Collections.reverseOrder());
 
