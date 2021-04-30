@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Frame extends JFrame {
 
-    private final String VERSION = "0.8_1";
+    private final String VERSION = "1";
     protected final String NAME = "Spacestroids " + VERSION;
     protected final int GAME_WIDTH = 1280;
     protected final int GAME_HEIGHT = 720;

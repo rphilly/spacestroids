@@ -1,6 +1,5 @@
 package com.game.engine.view;
 
-import com.game.state.Game;
 import com.game.state.Menu;
 import com.game.state.State;
 import com.game.util.MouseHandler;
@@ -34,13 +33,13 @@ public class Panel extends JPanel implements Runnable {
         start();
     }
 
-    private synchronized void start() { //Starts thread
+    private synchronized void start() {
         if (isRunning)
             return;
         isRunning = true;
 
-        thread = new Thread(this, "GameThread"); //refers to run function
-        thread.start(); //starts the thread
+        thread = new Thread(this, "GameThread");
+        thread.start(); //starts the thread and calls run function
     }
 
     private synchronized void stop() {
@@ -84,10 +83,10 @@ public class Panel extends JPanel implements Runnable {
         long timer = 0;
         int ticks = 0;
 
-        while (isRunning) { //Game loop
+        while (isRunning) {
             currentFrameTime = System.nanoTime();
             delta += (currentFrameTime - lastFrameTime) / timePerTick;
-            timer += currentFrameTime - lastFrameTime; //No. of nano seconds passed
+            timer += currentFrameTime - lastFrameTime;
             lastFrameTime = currentFrameTime;
 
             if (delta >= 1) {
@@ -131,7 +130,6 @@ public class Panel extends JPanel implements Runnable {
             g2d.setColor(Color.BLACK);
             g2d.fillRect(0, 0, width, height);
 
-            //Setup FPS
             if (showFPS) {
                 g2d.setFont(new Font("Times New Roman", Font.BOLD, 14));
                 g2d.setColor(Color.GREEN);

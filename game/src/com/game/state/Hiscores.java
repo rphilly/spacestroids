@@ -2,23 +2,20 @@ package com.game.state;
 
 import com.game.engine.view.Panel;
 import com.game.state.ui.UiButton;
-import com.game.state.ui.UiManager;
 import com.game.util.MouseHandler;
-import com.game.util.SaveScore;
 import com.game.util.SpriteLoader;
 import com.game.util.Vector2f;
 
-import java.awt.Graphics2D;
+import javax.swing.filechooser.FileSystemView;
+import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Hiscores extends State {
 
-    private final SaveScore score = new SaveScore();
-
     public Hiscores(Panel panel) {
         super(panel);
-
-        uiManager = new UiManager();
         panel.getMouseHandler().setUiManager(uiManager);
 
         //Back
@@ -29,7 +26,6 @@ public class Hiscores extends State {
 
     @Override
     public void input(MouseHandler mouse) {
-
     }
 
     @Override
@@ -44,10 +40,65 @@ public class Hiscores extends State {
         SpriteLoader.drawFont(g2d, "HISCORES", new Vector2f((float) panel.getWidth() / 2, 100), 0.75f,22, 0);
         SpriteLoader.drawFont(g2d, "Back", new Vector2f((float) panel.getWidth() / 2, 529), 0.5f,14, 0);
 
-        ArrayList<Integer> scoreList = score.getHiscores();
+        ArrayList<String> scoreList = getHiscores();
+        g2d.setColor(Color.white);
         for (int i = 0; i < scoreList.size(); i++) {
-            //g2d.drawString(i + 1 + ". " + scoreList.get(i), 620, 265 + i * 25);
-            SpriteLoader.drawFont(g2d, i + 1 + " Ryan TEST " + scoreList.get(i), new Vector2f(580, 225 + i * 25),0.5f,14, 0);
+            g2d.drawString(i + 1 + ". " + scoreList.get(i), 600, 265 + i * 25);
         }
+    }
+
+    private final static String save = FileSystemView.getFileSystemView().getDefaultDirectory().getPath() + "\\scores.txt";
+
+    public static void write(String score, int round) {
+        String record = Name.name + ", " + score + ", " + round;
+
+        HashSet<String> list = new HashSet<>(read());
+        list.add(record);
+
+        if (Integer.parseInt(score) <= 0) {
+            return;
+        }
+
+        try {
+            FileWriter fw = new FileWriter(save, false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter out = new PrintWriter(bw);
+            for (String line : list) {
+                out.println(line);
+            }
+            out.close();
+            bw.close();
+            fw.close();
+        } catch (Exception e) {
+            System.out.println("Error: failed to write file " + e);
+        }
+    }
+
+    private static ArrayList<String> read() {
+        ArrayList<String> scores = new ArrayList<>();
+
+        File file = new File(save);
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String str;
+            while ((str = br.readLine()) != null) {
+                scores.add(str);
+            }
+        } catch (Exception e) {
+            System.out.println("Error: failed to read file " + e);
+        }
+
+        return scores;
+    }
+
+    public ArrayList<String> getHiscores() {
+        ArrayList<String> scores = read();
+
+        if (scores.size() > 10) {
+            scores.subList(10, scores.size()).clear();
+        }
+
+        return scores;
     }
 }

@@ -17,6 +17,12 @@ public abstract class State {
         this.uiManager = new UiManager();
     }
 
+    public abstract void input(MouseHandler mouse);
+
+    public abstract void update();
+
+    public abstract void render(Graphics2D g2d);
+
     public static State getState() {
         return currentState;
     }
@@ -24,11 +30,4 @@ public abstract class State {
     public static void setState(State state) {
         currentState = state;
     }
-
-    public abstract void input(MouseHandler mouse);
-
-    public abstract void update();
-
-    public abstract void render(Graphics2D g2d);
-
 }

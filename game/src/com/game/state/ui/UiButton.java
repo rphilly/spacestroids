@@ -28,10 +28,9 @@ public class UiButton extends UiObject {
 
         if (hovering) {
             g.setColor(Color.BLUE);
-        } else {
-            g.setColor(Color.BLACK);
+            g.fillRect((int) x, (int) y, width, height);
         }
-        g.fillRect((int) x, (int) y, width, height);
+
         graphics = g;
     }
 

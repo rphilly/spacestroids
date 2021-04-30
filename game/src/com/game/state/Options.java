@@ -13,16 +13,14 @@ public class Options extends State {
 
     public Options(Panel panel) {
         super(panel);
-
-        uiManager = new UiManager();
         panel.getMouseHandler().setUiManager(uiManager);
 
-        //Scale
+        //FPS
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 326, 140, 45, () -> {
             panel.showFPS = !panel.showFPS;
         }));
 
-        //Exit
+        //Back
         uiManager.addObject(new UiButton((float) panel.getWidth() / 2 - 70, 520, 140, 45, () -> {
             setState(new Menu(panel));
         }));

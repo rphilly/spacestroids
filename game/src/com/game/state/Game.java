@@ -1,7 +1,6 @@
 package com.game.state;
 
 import com.game.entity.*;
-import com.game.util.SaveScore;
 import com.game.util.SpriteLoader;
 import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
@@ -23,21 +22,35 @@ public class Game extends State {
 
     public Game(Panel panel) {
         super(panel);
-        initialiseEntities();
+        setupEntities();
         player = new Player(new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2),
                             new Vector2f(100, 100), 0, this);
 
-        setupAsteroids(15);
+        generateAsteroids(1);
         Asteroid.setKillcount(0); //???
     }
 
-    private void initialiseEntities() {
+    private void setupEntities() {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
     }
 
-    private void setupAsteroids(int amount) {
+    public void setupScore() {
+        new Thread(() -> {
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                System.out.println("Error: hiscores failed to load..." + e);
+            }
+
+            Hiscores.write(Integer.toString(Asteroid.killcount), round);
+            setState(new Hiscores(panel));
+
+        }).start();
+    }
+
+    private void generateAsteroids(int amount) {
         Random random = new Random();
         int low = 35;
         int high = 80;
@@ -46,11 +59,8 @@ public class Game extends State {
             int x = random.nextInt(panel.getWidth());
             int y = random.nextInt(panel.getHeight());
 
-            while (Math.abs(x - player.getPosition().x) < high + player.getSize().x) {
+            while (Math.abs(x - player.getPosition().x) < high + player.getSize().x && Math.abs(y - player.getPosition().y) < high + player.getSize().y) {
                 x = random.nextInt(panel.getWidth());
-            }
-
-            while (Math.abs(y - player.getPosition().y) < high + player.getSize().y) {
                 y = random.nextInt(panel.getHeight());
             }
 
@@ -65,21 +75,6 @@ public class Game extends State {
 
             new Asteroid(position, velocity, size, Math.random() * 2 * Math.PI, this);
         }
-    }
-
-    public void setupScore() {
-        new Thread(() -> {
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException e) {
-                System.out.println("Error: hiscores failed to load..." + e);
-            }
-
-            SaveScore score = new SaveScore();
-            score.write(Integer.toString(Asteroid.killcount));
-            setState(new Hiscores(panel));
-
-        }).start();
     }
 
     @Override
@@ -114,7 +109,7 @@ public class Game extends State {
 
         if (asteroidList.isEmpty()) {
             round++;
-            setupAsteroids(5);
+            generateAsteroids(round);
         }
     }
 
@@ -126,5 +121,6 @@ public class Game extends State {
 
         SpriteLoader.drawFont(g2d, Integer.toString(round), new Vector2f((float) panel.getWidth() / 2, 30), 0.75f, 26, 0);
         SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f, 18, 0);
+        SpriteLoader.drawFont(g2d, Name.name, new Vector2f(panel.getWidth() - 150, panel.getHeight() - 100), 0.5f, 12, 0);
     }
 }

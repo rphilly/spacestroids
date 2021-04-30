@@ -1,7 +1,6 @@
 package com.game.entity;
 
 import com.game.state.Game;
-import com.game.util.MouseHandler;
 import com.game.util.SpriteLoader;
 import com.game.util.Vector2f;
 
@@ -27,29 +26,10 @@ public abstract class Entity {
         this.sprite = new SpriteLoader(path);
         game = instance;
 
-        game.entityList.add(this);
+        if (game != null) game.entityList.add(this);
 
         isDrawingBounds = false;
     }
-
-    protected boolean collisionDetection(Entity entity) {
-        double deltaX = (position.x) - (entity.position.x); //Difference between positions
-        double deltaY = (position.y) - (entity.position.y);
-        double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-
-        return distance < size.x / 2 + Math.min(entity.size.x, entity.size.y) / 2;
-    }
-
-    private void drawBounds(Graphics2D g2d) {
-        if (isDrawingBounds) {
-            Rectangle bounds = this.getBounds();
-            g2d.setColor(Color.RED);
-            g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
-                    (int) bounds.getWidth(), (int) bounds.getHeight());
-        }
-    }
-
-    public abstract void input(MouseHandler mouse);
 
     public abstract void update();
 
@@ -65,6 +45,23 @@ public abstract class Entity {
         g2d.drawImage(op2.filter(image, null), (int) (position.x - locationX), (int) (position.y - locationY), null);
 
         if (isDrawingBounds) drawBounds(g2d);
+    }
+
+    protected boolean collisionDetection(Entity entity) {
+        double deltaX = position.x - entity.position.x;
+        double deltaY = position.y - entity.position.y;
+        double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+        return distance < (size.x + Math.min(entity.size.x, entity.size.y)) / 2;
+    }
+
+    private void drawBounds(Graphics2D g2d) {
+        if (isDrawingBounds) {
+            Rectangle bounds = this.getBounds();
+            g2d.setColor(Color.RED);
+            g2d.drawRect((int) position.x - (int) bounds.getWidth() / 2, (int) position.y - (int) bounds.getHeight() / 2,
+                    (int) bounds.getWidth(), (int) bounds.getHeight());
+        }
     }
 
     public void remove() {

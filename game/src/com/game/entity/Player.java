@@ -39,13 +39,13 @@ public class Player extends Entity {
                 rotation = 0;
                 isAlive = false;
                 game.asteroidList.get(i).remove();
+                game.entityList.remove(this);
                 new Explosion(position, getGame());
                 break;
             }
         }
     }
 
-    @Override
     public void input(MouseHandler e) {
         pointer = e.getPointer();
         double x = e.getX() - position.x;
@@ -70,10 +70,5 @@ public class Player extends Entity {
                 position.y += pointer.y < centerY ? -velocity : velocity;
             }
         }
-    }
-
-    @Override
-    public void render(Graphics2D g2d) {
-        if (isAlive) super.render(g2d);
     }
 }

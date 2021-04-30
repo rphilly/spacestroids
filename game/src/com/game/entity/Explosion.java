@@ -38,10 +38,6 @@ public class Explosion extends Entity implements Runnable {
     }
 
     @Override
-    public void input(MouseHandler mouse) {
-    }
-
-    @Override
     public void update() {
     }
 
