@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="948a6883-8a63-4f88-a61f-36bc8ba83324" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Ryan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Ryan.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/SaveScore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/engine/view/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/view/Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Explosion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Hiscores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Hiscores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/UiButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/UiButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/util/SaveScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +42,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../projects/spacestroids" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
@@ -109,6 +87,8 @@
       <workItem from="1619546400684" duration="9049000" />
       <workItem from="1619615664398" duration="10486000" />
       <workItem from="1619704245897" duration="18181000" />
+      <workItem from="1619749574005" duration="240000" />
+      <workItem from="1619894352651" duration="2750000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE 0.7: New ImageLoader class. Menu text now set dynamically. Refactored rendering of actors.">
       <created>1618948843616</created>
@@ -138,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619066250138</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="UPDATE 1: Submission of game files, pushed with final game updates and fixes.">
+      <created>1619749805275</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619749805275</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +136,8 @@
     <MESSAGE value="UPDATE 0.7.1: General code clean up and improvements." />
     <MESSAGE value="UPDATE 0.8: Now with player death. Incrementing round-system with increasing asteroid velocity. Entities now explode upon collision." />
     <MESSAGE value="UPDATE 0.8_1: General code clean up and performance improvements." />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE 0.8_1: General code clean up and performance improvements." />
+    <MESSAGE value="UPDATE 1: Submission of game files, pushed with final game updates and fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE 1: Submission of game files, pushed with final game updates and fixes." />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1619712859932">
@@ -160,10 +148,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="743" y="454" width="433" height="218" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619061369920" />
-    <state x="241" y="130" width="1477" height="864" key="CommitChangelistDialog2" timestamp="1619066246005">
+    <state x="241" y="130" width="1477" height="864" key="CommitChangelistDialog2" timestamp="1619749800118">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="241" y="130" width="1477" height="864" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619066246005" />
+    <state x="241" y="130" width="1477" height="864" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619749800118" />
     <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1619063678223">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -188,10 +176,18 @@
     </state>
     <state width="1877" height="187" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619724927934" />
     <state width="1877" height="323" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619749531014" />
-    <state x="552" y="292" key="Vcs.Push.Dialog.v2" timestamp="1619066255560">
+    <state x="2155" y="167" key="SettingsEditor" timestamp="1619895406998">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2155" y="167" key="SettingsEditor/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619895406998" />
+    <state x="552" y="292" key="Vcs.Push.Dialog.v2" timestamp="1619749808729">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619066255560" />
+    <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619749808729" />
+    <state x="2551" y="348" key="git4idea.merge.GitPullDialog" timestamp="1619897234110">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2551" y="348" key="git4idea.merge.GitPullDialog/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897234110" />
     <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1619722205396">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
