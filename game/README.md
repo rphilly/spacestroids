@@ -1,5 +1,5 @@
-**bold** Spacestroids!
-Java asteroids implementation using default libraries for CE301 Capstone Project Challenge
+# Project title
+**Spacestroids!** - Java asteroids implementation using default libraries for CE301 Capstone Project Challenge
 
 # Requirements
 [Java runtime] (https://www.oracle.com/uk/java/technologies/javase-jre8-downloads.html)
@@ -31,23 +31,22 @@ in an organised structure.
 * Launcher - runs application
 
 * Entity - base class for game entities which are updated and drawn on panel. Following classes inherit from this class
- * Player - controllable player spaceship
- * Asteroid - the asteroids drawn in game
- * Bullet - a projectile shot by the player spacship
- * Explosion - a graphical explosion in new thread produced on asteroids crashing
+* Player - controllable player spaceship
+* Asteroid - the asteroids drawn in game
+* Bullet - a projectile shot by the player spacship
+* Explosion - a graphical explosion in new thread produced on asteroids crashing
 
 * State - base class for application states which are switched between upon usage
- * Menu - initial state class for navigation of application
- * Game - state class for rendering and updating game objects
- * Name - class for inputing desired player name
- * Options - state class for toggleable options
- * Hiscores - class for drawing high-scores in menu
-
+* Menu - initial state class for navigation of application
+* Game - state class for rendering and updating game objects
+* Name - class for inputing desired player name
+* Options - state class for toggleable options
+* Hiscores - class for drawing high-scores in menu
  * ClickListener - interface for clicking
  * UiObject - abstract class for defining bounds and functions for clickable objects
-  * UiButton - inherits from UiObject and enables hovering in the menu buttons
+ * UiButton - inherits from UiObject and enables hovering in the menu buttons
  * UiManager - class to store list of clickable objects to update and render
-  
+
 * FontLoader - class to load the Spacestroids font
 * ImageLoader - utility class to load all application sprites
 * MouseHandler - utility class to manage mouse input throughout application
