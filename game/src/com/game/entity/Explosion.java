@@ -1,18 +1,23 @@
 package com.game.entity;
 
 import com.game.state.Game;
-import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+/**
+ * Builds properties of Explosions; uses own-thread to increment explosion steps.
+ */
 public class Explosion extends Entity implements Runnable {
 
-    final int EXPLOSION_SIZE = 128;
-    final int EXPLOSION_STEPS = 15;
-    int explosionStep = 0;
+    /**
+     * Variables to store explosion information.
+     */
+    protected final int EXPLOSION_SIZE = 128;
+    protected final int EXPLOSION_STEPS = 15;
+    private int explosionStep = 0;
 
     public static ArrayList<Explosion> tempList = new ArrayList<>();
 

@@ -9,13 +9,22 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 
+/**
+ * Default abstract object class to build in-game objects.
+ */
 public abstract class Entity {
 
+    /**
+     * Variables to store all entity object information; accessed only within residing package.
+     */
     protected Vector2f position, velocity, size;
     protected double rotation;
     protected SpriteLoader sprite;
     protected Game game;
 
+    /**
+     * Toggle to draw object bounds; used primarily for collision-detection.
+     */
     private final boolean isDrawingBounds;
 
     public Entity(Vector2f position, Vector2f velocity, Vector2f size, double rotation, String path, Game instance) {
@@ -47,6 +56,12 @@ public abstract class Entity {
         if (isDrawingBounds) drawBounds(g2d);
     }
 
+    /**
+     * Detect collision based on current positions; uses Pythagorean theorem to calculate distance in-between objects.
+     *
+     * @param entity object to detect collision with.
+     * @return the minimum distance between compared objects.
+     */
     protected boolean collisionDetection(Entity entity) {
         double deltaX = position.x - entity.position.x;
         double deltaY = position.y - entity.position.y;

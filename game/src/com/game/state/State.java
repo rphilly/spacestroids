@@ -6,6 +6,9 @@ import com.game.engine.view.Panel;
 
 import java.awt.Graphics2D;
 
+/**
+ * Default state class to design properties of each extending state.
+ */
 public abstract class State {
 
     public Panel panel;

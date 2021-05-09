@@ -2,6 +2,7 @@ package com.game.state;
 
 import com.game.entity.Asteroid;
 import com.game.entity.Entity;
+import com.game.util.FontLoader;
 import com.game.util.MouseHandler;
 import com.game.state.ui.UiButton;
 import com.game.engine.view.Panel;
@@ -12,6 +13,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Handles menu objects.
+ */
 public class Menu extends State {
 
     private final State name = new Name(panel);
@@ -45,6 +49,9 @@ public class Menu extends State {
         generateAsteroids();
     }
 
+    /**
+     * Generates background asteroid objects.
+     */
     private void generateAsteroids() {
         Random random = new Random();
         int low = 35;
@@ -89,10 +96,10 @@ public class Menu extends State {
 
         uiManager.render(g2d);
 
-        SpriteLoader.drawFont(g2d,"SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2, 100), 1, 30, 0);
-        SpriteLoader.drawFont(g2d,"Play", new Vector2f((float) panel.getWidth() / 2, 270), 0.5f, 14, 0);
-        SpriteLoader.drawFont(g2d,"Hiscores", new Vector2f((float) panel.getWidth() / 2, 335),0.5f,14, 0);
-        SpriteLoader.drawFont(g2d,"Options", new Vector2f((float) panel.getWidth() / 2, 400), 0.5f,14, 0);
-        SpriteLoader.drawFont(g2d,"Exit", new Vector2f((float) panel.getWidth() / 2, 529), 0.5f,14, 0);
+        FontLoader.drawFont(g2d,"SPACESTROIDS", new Vector2f((float) panel.getWidth() / 2, 100), 1, 30, 0);
+        FontLoader.drawFont(g2d,"Play", new Vector2f((float) panel.getWidth() / 2, 270), 0.5f, 14, 0);
+        FontLoader.drawFont(g2d,"Hiscores", new Vector2f((float) panel.getWidth() / 2, 335),0.5f,14, 0);
+        FontLoader.drawFont(g2d,"Options", new Vector2f((float) panel.getWidth() / 2, 400), 0.5f,14, 0);
+        FontLoader.drawFont(g2d,"Exit", new Vector2f((float) panel.getWidth() / 2, 529), 0.5f,14, 0);
     }
 }

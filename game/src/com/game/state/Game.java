@@ -1,6 +1,7 @@
 package com.game.state;
 
 import com.game.entity.*;
+import com.game.util.FontLoader;
 import com.game.util.SpriteLoader;
 import com.game.util.MouseHandler;
 import com.game.util.Vector2f;
@@ -10,11 +11,18 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Handles game-state objects.
+ */
 public class Game extends State {
 
+    /**
+     * Variables to store lists of objects respective of type.
+     */
     public ArrayList<Entity> entityList;
     public ArrayList<Asteroid> asteroidList;
     public ArrayList<Bullet> bulletList;
+
     private final Player player;
 
     private int round = 1;
@@ -30,12 +38,18 @@ public class Game extends State {
         Asteroid.setKillcount(0); //???
     }
 
+    /**
+     * Initialises object entity lists.
+     */
     private void setupEntities() {
         entityList = new ArrayList<>();
         asteroidList = new ArrayList<>();
         bulletList = new ArrayList<>();
     }
 
+    /**
+     * Initialises score on new thread; writes settled score & changes state.
+     */
     public void setupScore() {
         new Thread(() -> {
             try {
@@ -50,6 +64,11 @@ public class Game extends State {
         }).start();
     }
 
+    /**
+     * Spawns asteroids with randomised properties.
+     *
+     * @param amount the number of asteroids initially created.
+     */
     private void generateAsteroids(int amount) {
         Random random = new Random();
         int low = 35;
@@ -119,8 +138,8 @@ public class Game extends State {
             entity.render(g2d);
         }
 
-        SpriteLoader.drawFont(g2d, Integer.toString(round), new Vector2f((float) panel.getWidth() / 2, 30), 0.75f, 26, 0);
-        SpriteLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f, 18, 0);
-        SpriteLoader.drawFont(g2d, Name.name, new Vector2f(panel.getWidth() - 150, panel.getHeight() - 100), 0.5f, 12, 0);
+        FontLoader.drawFont(g2d, Integer.toString(round), new Vector2f((float) panel.getWidth() / 2, 30), 0.75f, 26, 0);
+        FontLoader.drawFont(g2d, Integer.toString(Asteroid.killcount), new Vector2f(50, panel.getHeight() - 100), 0.5f, 18, 0);
+        FontLoader.drawFont(g2d, Name.name, new Vector2f(panel.getWidth() - 150, panel.getHeight() - 100), 0.5f, 12, 0);
     }
 }

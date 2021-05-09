@@ -2,9 +2,15 @@ package com.game.engine.view;
 
 import javax.swing.*;
 
+/**
+ * Sets-up application frame and applies the panel.
+ */
 public class Frame extends JFrame {
 
-    private final String VERSION = "1.01";
+    /**
+     * Variables to store application information; used within this package only.
+     */
+    private final String VERSION = "1.02_1";
     protected final String NAME = "Spacestroids " + VERSION;
     protected final int GAME_WIDTH = 1280;
     protected final int GAME_HEIGHT = 720;

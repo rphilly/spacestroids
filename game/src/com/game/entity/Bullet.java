@@ -3,6 +3,9 @@ package com.game.entity;
 import com.game.state.Game;
 import com.game.util.Vector2f;
 
+/**
+ * Builds properties of Bullet objects.
+ */
 public class Bullet extends Entity {
 
     public Bullet(Vector2f position, double rotation, Game instance) {

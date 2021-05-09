@@ -6,14 +6,20 @@ import com.game.util.Vector2f;
 
 import java.awt.*;
 
+/**
+ * Builds properties of Player; handles collision with Asteroids.
+ */
 public class Player extends Entity {
 
+    /**
+     * Variables for player information; accessed within residing class only.
+     */
     private Point pointer;
     private boolean isAlive = true;
     private int health = 100;
     private double velocity = 1.5;
     private int triggerCd = 0;
-    int triggerDelay = 15;
+    protected int triggerDelay = 15;
 
     public Player(Vector2f position, Vector2f size, double rotation, Game instance) {
         super(position, Vector2f.zero(), size, rotation, "entity/player/playertest2.png", instance);

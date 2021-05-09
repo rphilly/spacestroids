@@ -6,6 +6,9 @@ import com.game.util.*;
 
 import java.util.ArrayList;
 
+/**
+ * Builds properties of Asteroid objects.
+ */
 public class Asteroid extends Entity {
 
     public static ArrayList<Asteroid> tempList = new ArrayList<>();

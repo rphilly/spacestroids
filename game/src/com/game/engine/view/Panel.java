@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Handles application panel and initialises game-loop.
+ */
 public class Panel extends JPanel implements Runnable {
 
     private final int width;

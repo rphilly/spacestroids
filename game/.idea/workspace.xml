@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="948a6883-8a63-4f88-a61f-36bc8ba83324" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/engine/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/engine/view/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/view/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/engine/view/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/view/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Explosion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/Hiscores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Hiscores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Name.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Options.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/ClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/ClickListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/UiButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/UiButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/UiManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/UiManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/UiObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/UiObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/util/FontLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/FontLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/util/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/ImageLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/util/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/MouseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/util/SpriteLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/SpriteLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +109,8 @@
       <workItem from="1619615664398" duration="10486000" />
       <workItem from="1619704245897" duration="18181000" />
       <workItem from="1619749574005" duration="240000" />
-      <workItem from="1619894352651" duration="3059000" />
+      <workItem from="1619894352651" duration="3526000" />
+      <workItem from="1620569203820" duration="3621000" />
     </task>
     <task id="LOCAL-00001" summary="UPDATE 0.7: New ImageLoader class. Menu text now set dynamically. Refactored rendering of actors.">
       <created>1618948843616</created>
@@ -138,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619897360677</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="UPDATE 1.02: Fix of git upload v3">
+      <created>1619897553634</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619897553634</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +182,8 @@
     <MESSAGE value="UPDATE 1: Submission of game files, pushed with final game updates and fixes." />
     <MESSAGE value="UPDATE 1.01: Fix of git upload!" />
     <MESSAGE value="UPDATE 1.02: Fix of git upload v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE 1.02: Fix of git upload v2" />
+    <MESSAGE value="UPDATE 1.02: Fix of git upload v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE 1.02: Fix of git upload v3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1619712859932">
@@ -163,11 +194,11 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="743" y="454" width="433" height="218" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619061369920" />
-    <state x="2161" y="130" width="1477" height="864" key="CommitChangelistDialog2" timestamp="1619897359903">
+    <state x="2161" y="130" width="1477" height="864" key="CommitChangelistDialog2" timestamp="1619897552726">
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
     <state x="241" y="130" width="1477" height="864" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619749800118" />
-    <state x="2161" y="130" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897359903" />
+    <state x="2161" y="130" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897552726" />
     <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1619063678223">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -196,11 +227,11 @@
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
     <state x="2155" y="167" key="SettingsEditor/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619895406998" />
-    <state x="2472" y="292" key="Vcs.Push.Dialog.v2" timestamp="1619897364935">
+    <state x="2472" y="292" key="Vcs.Push.Dialog.v2" timestamp="1619897555227">
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
     <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619749808729" />
-    <state x="2472" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897364935" />
+    <state x="2472" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897555227" />
     <state x="2551" y="348" key="git4idea.merge.GitPullDialog" timestamp="1619897234110">
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>

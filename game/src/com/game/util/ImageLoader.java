@@ -4,9 +4,12 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
+/**
+ * Loads all res sprites used in application.
+ */
 public class ImageLoader {
 
-    private ImageLoader() {} //Prevents creating new object of this type
+    private ImageLoader() {} //Prevents creating new object of respective type.
 
     public static BufferedImage load(String file) {
         BufferedImage i = null;

@@ -4,6 +4,11 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+/**
+ * User-interface class.
+ *
+ * Manages and updates gui objects; handles mouse interactions.
+ */
 public class UiManager {
 
     private final ArrayList<UiObject> objects;

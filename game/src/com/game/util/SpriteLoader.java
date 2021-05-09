@@ -1,8 +1,10 @@
 package com.game.util;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Handles loading of in-game sprites.
+ */
 public class SpriteLoader {
 
     private final BufferedImage sprite;
@@ -14,24 +16,6 @@ public class SpriteLoader {
 
         width = sprite.getWidth();
         height = sprite.getHeight();
-    }
-
-    public static void drawFont(Graphics2D g2d, String word, Vector2f position, float sizeFactor, int xOffset, int yOffset) {
-        double x = position.x;
-        double y = position.y;
-
-        for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) != 32)
-                g2d.drawImage(FontLoader.FONT.getLetter(word.charAt(i)),
-                        (int) (x - 16 * word.length() * sizeFactor),
-                        (int) y,
-                        (int) (sizeFactor * 64),
-                        (int) (sizeFactor * 64),
-                        null);
-
-            x += xOffset;
-            y += yOffset;
-        }
     }
 
     public BufferedImage getSprite() {

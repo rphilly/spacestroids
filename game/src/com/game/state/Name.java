@@ -2,6 +2,7 @@ package com.game.state;
 
 import com.game.engine.view.Panel;
 import com.game.state.ui.UiButton;
+import com.game.util.FontLoader;
 import com.game.util.MouseHandler;
 import com.game.util.SpriteLoader;
 import com.game.util.Vector2f;
@@ -11,6 +12,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Handles player input name.
+ */
 public class Name extends State {
 
     public static String name = "";
@@ -70,9 +74,9 @@ public class Name extends State {
         }
 
         g2d.drawRect((panel.getWidth() / 2 - 8 * CHAR_LIMIT - 20), panel.getHeight() / 2 - 12, 16 * CHAR_LIMIT + 40, 48);
-        SpriteLoader.drawFont(g2d, name, new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), 0.5f, 14, 0);
+        FontLoader.drawFont(g2d, name, new Vector2f((float) panel.getWidth() / 2, (float) panel.getHeight() / 2), 0.5f, 14, 0);
 
-        SpriteLoader.drawFont(g2d, "NAME", new Vector2f((float) panel.getWidth() / 2, 100), 0.75f,22, 0);
-        SpriteLoader.drawFont(g2d, "Back", new Vector2f((float) panel.getWidth() / 2, 529), 0.5f,14, 0);
+        FontLoader.drawFont(g2d, "NAME", new Vector2f((float) panel.getWidth() / 2, 100), 0.75f,22, 0);
+        FontLoader.drawFont(g2d, "Back", new Vector2f((float) panel.getWidth() / 2, 529), 0.5f,14, 0);
     }
 }

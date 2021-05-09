@@ -3,6 +3,11 @@ package com.game.state.ui;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
+/**
+ * User-interface class.
+ *
+ * Designs properties of gui objects.
+ */
 public abstract class UiObject {
 
     protected float x, y;

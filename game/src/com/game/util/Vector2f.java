@@ -1,5 +1,8 @@
 package com.game.util;
 
+/**
+ * Handles vectors used throughout application for consistent organised data structure.
+ */
 public class Vector2f {
 
     public float x;

@@ -2,6 +2,11 @@ package com.game.state.ui;
 
 import java.awt.*;
 
+/**
+ * User-interface class.
+ *
+ * Builds buttons used within application menu system.
+ */
 public class UiButton extends UiObject {
 
     private final ClickListener click;
