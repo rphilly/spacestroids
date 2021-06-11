@@ -1,8 +1,8 @@
 package com.game.entity;
 
+import com.game.engine.math.Vector2f;
 import com.game.state.Game;
 import com.game.util.MouseHandler;
-import com.game.util.Vector2f;
 
 import java.awt.*;
 
@@ -76,5 +76,9 @@ public class Player extends Entity {
                 position.y += pointer.y < centerY ? -velocity : velocity;
             }
         }
+    }
+
+    public boolean isAlive() {
+        return isAlive;
     }
 }

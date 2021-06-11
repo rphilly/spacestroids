@@ -1,4 +1,4 @@
-package com.game.util;
+package com.game.engine.math;
 
 /**
  * Handles vectors used throughout application for consistent organised data structure.

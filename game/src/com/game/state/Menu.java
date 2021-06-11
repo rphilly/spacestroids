@@ -1,13 +1,12 @@
 package com.game.state;
 
+import com.game.engine.math.Vector2f;
 import com.game.entity.Asteroid;
 import com.game.entity.Entity;
 import com.game.util.FontLoader;
 import com.game.util.MouseHandler;
 import com.game.state.ui.UiButton;
 import com.game.engine.view.Panel;
-import com.game.util.SpriteLoader;
-import com.game.util.Vector2f;
 
 import java.awt.*;
 import java.util.ArrayList;

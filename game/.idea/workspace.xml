@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="948a6883-8a63-4f88-a61f-36bc8ba83324" name="Default Changelist" comment="">
+    <list default="true" id="f4c31170-4003-4a3e-aefa-fdb59a4ab3d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ce301_phillips_ryan_t.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/engine/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/engine/view/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/view/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/engine/view/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/view/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GAME.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GAME.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/GAME_jar/GAME.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Options.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/FontLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/FontLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/ImageLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/MouseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/SpriteLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/SpriteLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/Vector2f.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Entity.java" afterDir="false" />
@@ -16,15 +41,8 @@
       <change beforePath="$PROJECT_DIR$/src/com/game/state/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/state/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Name.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/state/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/ClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/ClickListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/UiButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/UiButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/UiManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/UiManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/ui/UiObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/ui/UiObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/game/util/FontLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/FontLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/util/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/ImageLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/util/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/MouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/util/SpriteLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/SpriteLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/util/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/math/Vector2f.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +57,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Phillips, Ryan T &lt;rp17399@essex.ac.uk&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1rRfi3hjqRUT0TSxtqd579de2sj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="1sRU94qQuHDtF0FSrbg58UUhPGw" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -60,12 +73,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../projects/spacestroids" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
@@ -93,152 +104,61 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="948a6883-8a63-4f88-a61f-36bc8ba83324" name="Default Changelist" comment="" />
-      <created>1618943947149</created>
+      <changelist id="f4c31170-4003-4a3e-aefa-fdb59a4ab3d1" name="Default Changelist" comment="" />
+      <created>1620834740828</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1618943947149</updated>
-      <workItem from="1618943950664" duration="7876000" />
-      <workItem from="1619021718442" duration="18156000" />
-      <workItem from="1619060042237" duration="6520000" />
-      <workItem from="1619107236092" duration="4047000" />
-      <workItem from="1619284625384" duration="7084000" />
-      <workItem from="1619375505295" duration="5377000" />
-      <workItem from="1619438619521" duration="5930000" />
-      <workItem from="1619546400684" duration="9049000" />
-      <workItem from="1619615664398" duration="10486000" />
-      <workItem from="1619704245897" duration="18181000" />
-      <workItem from="1619749574005" duration="240000" />
-      <workItem from="1619894352651" duration="3526000" />
-      <workItem from="1620569203820" duration="3621000" />
+      <updated>1620834740828</updated>
+      <workItem from="1620834745790" duration="5245000" />
+      <workItem from="1620846846149" duration="6453000" />
+      <workItem from="1621617713190" duration="110000" />
+      <workItem from="1623348826364" duration="844000" />
+      <workItem from="1623349740242" duration="2184000" />
+      <workItem from="1623421011709" duration="453000" />
+      <workItem from="1623421480449" duration="29000" />
     </task>
-    <task id="LOCAL-00001" summary="UPDATE 0.7: New ImageLoader class. Menu text now set dynamically. Refactored rendering of actors.">
-      <created>1618948843616</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1618948843616</updated>
-    </task>
-    <task id="LOCAL-00002" summary="UPDATE 0.7.1: General code clean up and improvements.">
-      <created>1618970032488</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1618970032488</updated>
-    </task>
-    <task id="LOCAL-00003" summary="UPDATE 0.8: Now with player death. Incrementing round-system with increasing asteroid velocity. Entities now explode upon collision.">
-      <created>1619032481114</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619032481114</updated>
-    </task>
-    <task id="LOCAL-00004" summary="UPDATE 0.8_1: General code clean up and performance improvements.">
-      <created>1619066250138</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619066250138</updated>
-    </task>
-    <task id="LOCAL-00005" summary="UPDATE 1: Submission of game files, pushed with final game updates and fixes.">
-      <created>1619749805275</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1619749805275</updated>
-    </task>
-    <task id="LOCAL-00006" summary="UPDATE 1.01: Fix of git upload!">
-      <created>1619897271691</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1619897271691</updated>
-    </task>
-    <task id="LOCAL-00007" summary="UPDATE 1.02: Fix of git upload v2">
-      <created>1619897360677</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1619897360677</updated>
-    </task>
-    <task id="LOCAL-00008" summary="UPDATE 1.02: Fix of git upload v3">
-      <created>1619897553634</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1619897553634</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="UPDATE 0.7: New ImageLoader class. Menu text now set dynamically. Refactored rendering of actors." />
-    <MESSAGE value="UPDATE 0.7.1: General code clean up and improvements." />
-    <MESSAGE value="UPDATE 0.8: Now with player death. Incrementing round-system with increasing asteroid velocity. Entities now explode upon collision." />
-    <MESSAGE value="UPDATE 0.8_1: General code clean up and performance improvements." />
-    <MESSAGE value="UPDATE 1: Submission of game files, pushed with final game updates and fixes." />
-    <MESSAGE value="UPDATE 1.01: Fix of git upload!" />
-    <MESSAGE value="UPDATE 1.02: Fix of git upload v2" />
-    <MESSAGE value="UPDATE 1.02: Fix of git upload v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE 1.02: Fix of git upload v3" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1619712859932">
+    <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1620847101976">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619712859932" />
-    <state x="743" y="454" width="433" height="218" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1619061369920">
+    <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620847101976" />
+    <state x="690" y="350" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1623421494016">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="743" y="454" width="433" height="218" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619061369920" />
-    <state x="2161" y="130" width="1477" height="864" key="CommitChangelistDialog2" timestamp="1619897552726">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state x="241" y="130" width="1477" height="864" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619749800118" />
-    <state x="2161" y="130" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897552726" />
-    <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1619063678223">
+    <state x="690" y="350" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421494016" />
+    <state x="366" y="345" key="FileChooserDialogImpl" timestamp="1623349798747">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="740" y="314" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619063678223" />
-    <state width="1877" height="323" key="GridCell.Tab.0.bottom" timestamp="1619749531014">
+    <state x="366" y="345" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623349798747" />
+    <state x="2660" y="314" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1621617820515" />
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom" timestamp="1620861917726">
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619724927934" />
-    <state width="1877" height="323" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619749531014" />
-    <state width="1877" height="323" key="GridCell.Tab.0.center" timestamp="1619749531014">
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
+    <state width="1877" height="213" key="GridCell.Tab.0.center" timestamp="1620861917726">
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619724927934" />
-    <state width="1877" height="323" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619749531014" />
-    <state width="1877" height="323" key="GridCell.Tab.0.left" timestamp="1619749531014">
+    <state width="1877" height="213" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
+    <state width="1877" height="213" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
+    <state width="1877" height="213" key="GridCell.Tab.0.left" timestamp="1620861917726">
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619724927933" />
-    <state width="1877" height="323" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619749531014" />
-    <state width="1877" height="323" key="GridCell.Tab.0.right" timestamp="1619749531014">
+    <state width="1877" height="213" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
+    <state width="1877" height="213" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
+    <state width="1877" height="213" key="GridCell.Tab.0.right" timestamp="1620861917726">
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="187" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619724927934" />
-    <state width="1877" height="323" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619749531014" />
-    <state x="2155" y="167" key="SettingsEditor" timestamp="1619895406998">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state x="2155" y="167" key="SettingsEditor/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619895406998" />
-    <state x="2472" y="292" key="Vcs.Push.Dialog.v2" timestamp="1619897555227">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619749808729" />
-    <state x="2472" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897555227" />
-    <state x="2551" y="348" key="git4idea.merge.GitPullDialog" timestamp="1619897234110">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state x="2551" y="348" key="git4idea.merge.GitPullDialog/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1619897234110" />
-    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1619722205396">
+    <state width="1877" height="213" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
+    <state width="1877" height="213" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
+    <state x="440" y="134" width="1300" height="852" key="SettingsEditor" timestamp="1623421507948">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1619722205396" />
+    <state x="440" y="134" width="1300" height="852" key="SettingsEditor/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421507948" />
   </component>
 </project>

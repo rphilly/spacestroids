@@ -1,10 +1,9 @@
 package com.game.state;
 
+import com.game.engine.math.Vector2f;
 import com.game.entity.*;
 import com.game.util.FontLoader;
-import com.game.util.SpriteLoader;
 import com.game.util.MouseHandler;
-import com.game.util.Vector2f;
 import com.game.engine.view.Panel;
 
 import java.awt.*;
@@ -126,7 +125,7 @@ public class Game extends State {
         Explosion.tempList.forEach(Entity::remove);
         Explosion.tempList.clear();
 
-        if (asteroidList.isEmpty()) {
+        if (asteroidList.isEmpty() && player.isAlive()) {
             round++;
             generateAsteroids(round);
         }

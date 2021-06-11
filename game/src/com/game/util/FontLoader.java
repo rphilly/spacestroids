@@ -1,5 +1,7 @@
 package com.game.util;
 
+import com.game.engine.math.Vector2f;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 

@@ -1,11 +1,10 @@
 package com.game.state;
 
+import com.game.engine.math.Vector2f;
 import com.game.engine.view.Panel;
 import com.game.state.ui.UiButton;
 import com.game.util.FontLoader;
 import com.game.util.MouseHandler;
-import com.game.util.SpriteLoader;
-import com.game.util.Vector2f;
 
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;

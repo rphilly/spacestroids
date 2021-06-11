@@ -1,7 +1,7 @@
 package com.game.entity;
 
+import com.game.engine.math.Vector2f;
 import com.game.state.Game;
-import com.game.util.Vector2f;
 
 /**
  * Builds properties of Bullet objects.
