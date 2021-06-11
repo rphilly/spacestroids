@@ -1,49 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="game:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4c31170-4003-4a3e-aefa-fdb59a4ab3d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ce301_phillips_ryan_t.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GAME.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GAME.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/GAME_jar/GAME.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Options.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/FontLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/FontLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/ImageLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/MouseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/SpriteLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/SpriteLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/Vector2f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Asteroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Explosion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Hiscores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Hiscores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Name.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/state/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/state/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/util/FontLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/util/FontLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/game/util/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/engine/math/Vector2f.java" afterDir="false" />
-    </list>
+    <list default="true" id="f4c31170-4003-4a3e-aefa-fdb59a4ab3d1" name="Default Changelist" comment="Fixed .jar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Phillips, Ryan T &lt;rp17399@essex.ac.uk&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1sRU94qQuHDtF0FSrbg58UUhPGw" />
@@ -115,12 +83,24 @@
       <workItem from="1623348826364" duration="844000" />
       <workItem from="1623349740242" duration="2184000" />
       <workItem from="1623421011709" duration="453000" />
-      <workItem from="1623421480449" duration="29000" />
+      <workItem from="1623421480449" duration="208000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed .jar">
+      <created>1623421643612</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623421643612</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed .jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed .jar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1620847101976">
@@ -131,6 +111,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="690" y="350" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421494016" />
+    <state x="329" y="128" width="1529" height="864" key="CommitChangelistDialog2" timestamp="1623421648651">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="329" y="128" width="1529" height="864" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421648651" />
     <state x="366" y="345" key="FileChooserDialogImpl" timestamp="1623349798747">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -160,5 +144,9 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="440" y="134" width="1300" height="852" key="SettingsEditor/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421507948" />
+    <state x="552" y="292" key="Vcs.Push.Dialog.v2" timestamp="1623421655439">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421655439" />
   </component>
 </project>
