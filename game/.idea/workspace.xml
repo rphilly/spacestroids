@@ -5,8 +5,39 @@
       <artifact name="game:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4c31170-4003-4a3e-aefa-fdb59a4ab3d1" name="Default Changelist" comment="Fixed .jar" />
+    <list default="true" id="f4c31170-4003-4a3e-aefa-fdb59a4ab3d1" name="Default Changelist" comment="Redirected .jar to source tree">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/META-INF/game.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/math/Vector2f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/math/Vector2f.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/engine/view/Panel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Asteroid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Explosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Hiscores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Name.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/Options.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/ClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/ClickListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/state/ui/UiObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/FontLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/FontLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/ImageLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/MouseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/com/game/util/SpriteLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/com/game/util/SpriteLoader.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +58,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="1sRU94qQuHDtF0FSrbg58UUhPGw" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -35,18 +69,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="restartRequiresConfirmation" value="false" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;&lt;unknown&gt;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.game.engine.Launcher" />
@@ -67,6 +105,15 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -84,6 +131,12 @@
       <workItem from="1623349740242" duration="2184000" />
       <workItem from="1623421011709" duration="453000" />
       <workItem from="1623421480449" duration="208000" />
+      <workItem from="1623427944220" duration="116000" />
+      <workItem from="1625110781936" duration="13000" />
+      <workItem from="1625504326958" duration="118000" />
+      <workItem from="1630789245563" duration="261000" />
+      <workItem from="1742550130835" duration="1815000" />
+      <workItem from="1742554357875" duration="389000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed .jar">
       <created>1623421643612</created>
@@ -92,61 +145,22 @@
       <option name="project" value="LOCAL" />
       <updated>1623421643612</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Redirected .jar to source tree">
+      <created>1623428031512</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623428031512</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed .jar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed .jar" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1620847101976">
-      <screen x="0" y="40" width="1920" height="1040" />
-    </state>
-    <state x="765" y="260" key="#com.intellij.ide.util.MemberChooser/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620847101976" />
-    <state x="690" y="350" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1623421494016">
-      <screen x="0" y="40" width="1920" height="1040" />
-    </state>
-    <state x="690" y="350" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421494016" />
-    <state x="329" y="128" width="1529" height="864" key="CommitChangelistDialog2" timestamp="1623421648651">
-      <screen x="0" y="40" width="1920" height="1040" />
-    </state>
-    <state x="329" y="128" width="1529" height="864" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421648651" />
-    <state x="366" y="345" key="FileChooserDialogImpl" timestamp="1623349798747">
-      <screen x="0" y="40" width="1920" height="1040" />
-    </state>
-    <state x="366" y="345" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623349798747" />
-    <state x="2660" y="314" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1621617820515" />
-    <state width="1877" height="213" key="GridCell.Tab.0.bottom" timestamp="1620861917726">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
-    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
-    <state width="1877" height="213" key="GridCell.Tab.0.center" timestamp="1620861917726">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
-    <state width="1877" height="213" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
-    <state width="1877" height="213" key="GridCell.Tab.0.left" timestamp="1620861917726">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
-    <state width="1877" height="213" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
-    <state width="1877" height="213" key="GridCell.Tab.0.right" timestamp="1620861917726">
-      <screen x="1920" y="40" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1620850610262" />
-    <state width="1877" height="213" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1620861917726" />
-    <state x="440" y="134" width="1300" height="852" key="SettingsEditor" timestamp="1623421507948">
-      <screen x="0" y="40" width="1920" height="1040" />
-    </state>
-    <state x="440" y="134" width="1300" height="852" key="SettingsEditor/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421507948" />
-    <state x="552" y="292" key="Vcs.Push.Dialog.v2" timestamp="1623421655439">
-      <screen x="0" y="40" width="1920" height="1040" />
-    </state>
-    <state x="552" y="292" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1623421655439" />
+    <MESSAGE value="Redirected .jar to source tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redirected .jar to source tree" />
   </component>
 </project>
